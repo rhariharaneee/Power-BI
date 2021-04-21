@@ -1,0 +1,3462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report MustUnderstand="df" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily">
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>e403f6b1-d4dd-4eaa-884a-32b01ba30955</rd:ReportID>
+  <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="EnterDate">
+      <rd:SecurityType>Integrated</rd:SecurityType>
+      <ConnectionProperties>
+        <DataProvider>ENTERDATA</DataProvider>
+        <ConnectString />
+        <IntegratedSecurity>true</IntegratedSecurity>
+      </ConnectionProperties>
+      <rd:DataSourceID>4b2fd8d1-af10-4e8d-a690-e5cf8ec39a81</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="Sales">
+      <Query>
+        <DataSourceName>EnterDate</DataSourceName>
+        <rd:DesignerState>
+          <DataGrid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="">
+            <RowNumber>97</RowNumber>
+            <ColumnNumber>5</ColumnNumber>
+            <ColumnName ColumnIndex="0" ColumnWidth="100" DataType="String">BrandName</ColumnName>
+            <ColumnName ColumnIndex="1" ColumnWidth="100" DataType="String">ColorName</ColumnName>
+            <ColumnName ColumnIndex="2" ColumnWidth="100" DataType="String">ChannelName</ColumnName>
+            <ColumnName ColumnIndex="3" ColumnWidth="100" DataType="String">Quantity</ColumnName>
+            <ColumnName ColumnIndex="4" ColumnWidth="100" DataType="Float">Amount</ColumnName>
+            <Data ColumnIndex="0" RowIndex="0">Wide World Importers</Data>
+            <Data ColumnIndex="1" RowIndex="0">White</Data>
+            <Data ColumnIndex="2" RowIndex="0">Store</Data>
+            <Data ColumnIndex="3" RowIndex="0">1</Data>
+            <Data ColumnIndex="4" RowIndex="0">199.95</Data>
+            <Data ColumnIndex="0" RowIndex="1">Proseware</Data>
+            <Data ColumnIndex="1" RowIndex="1">Silver</Data>
+            <Data ColumnIndex="2" RowIndex="1">Online</Data>
+            <Data ColumnIndex="3" RowIndex="1">1</Data>
+            <Data ColumnIndex="4" RowIndex="1">190.00</Data>
+            <Data ColumnIndex="0" RowIndex="2">Fabrikam</Data>
+            <Data ColumnIndex="1" RowIndex="2">Silver</Data>
+            <Data ColumnIndex="2" RowIndex="2">Store</Data>
+            <Data ColumnIndex="3" RowIndex="2">1</Data>
+            <Data ColumnIndex="4" RowIndex="2">139.99</Data>
+            <Data ColumnIndex="0" RowIndex="3">Tailspin Toys</Data>
+            <Data ColumnIndex="1" RowIndex="3">Red</Data>
+            <Data ColumnIndex="2" RowIndex="3">Store</Data>
+            <Data ColumnIndex="3" RowIndex="3">1</Data>
+            <Data ColumnIndex="4" RowIndex="3">16.89</Data>
+            <Data ColumnIndex="0" RowIndex="4">Litware</Data>
+            <Data ColumnIndex="1" RowIndex="4">Black</Data>
+            <Data ColumnIndex="2" RowIndex="4">Reseller</Data>
+            <Data ColumnIndex="3" RowIndex="4">1</Data>
+            <Data ColumnIndex="4" RowIndex="4">689.00</Data>
+            <Data ColumnIndex="0" RowIndex="5">The Phone Company</Data>
+            <Data ColumnIndex="1" RowIndex="5">Grey</Data>
+            <Data ColumnIndex="2" RowIndex="5">Catalog</Data>
+            <Data ColumnIndex="3" RowIndex="5">1</Data>
+            <Data ColumnIndex="4" RowIndex="5">258.00</Data>
+            <Data ColumnIndex="0" RowIndex="6">The Phone Company</Data>
+            <Data ColumnIndex="1" RowIndex="6">White</Data>
+            <Data ColumnIndex="2" RowIndex="6">Catalog</Data>
+            <Data ColumnIndex="3" RowIndex="6">2</Data>
+            <Data ColumnIndex="4" RowIndex="6">460.00</Data>
+            <Data ColumnIndex="0" RowIndex="7">Contoso</Data>
+            <Data ColumnIndex="1" RowIndex="7">Black</Data>
+            <Data ColumnIndex="2" RowIndex="7">Online</Data>
+            <Data ColumnIndex="3" RowIndex="7">1</Data>
+            <Data ColumnIndex="4" RowIndex="7">4.06</Data>
+            <Data ColumnIndex="0" RowIndex="8">Fabrikam</Data>
+            <Data ColumnIndex="1" RowIndex="8">White</Data>
+            <Data ColumnIndex="2" RowIndex="8">Store</Data>
+            <Data ColumnIndex="3" RowIndex="8">1</Data>
+            <Data ColumnIndex="4" RowIndex="8">149.00</Data>
+            <Data ColumnIndex="0" RowIndex="9">Contoso</Data>
+            <Data ColumnIndex="1" RowIndex="9">Black</Data>
+            <Data ColumnIndex="2" RowIndex="9">Store</Data>
+            <Data ColumnIndex="3" RowIndex="9">1</Data>
+            <Data ColumnIndex="4" RowIndex="9">409.00</Data>
+            <Data ColumnIndex="0" RowIndex="10">Adventure Works</Data>
+            <Data ColumnIndex="1" RowIndex="10">Silver</Data>
+            <Data ColumnIndex="2" RowIndex="10">Store</Data>
+            <Data ColumnIndex="3" RowIndex="10">1</Data>
+            <Data ColumnIndex="4" RowIndex="10">499.90</Data>
+            <Data ColumnIndex="0" RowIndex="11">Litware</Data>
+            <Data ColumnIndex="1" RowIndex="11">Silver</Data>
+            <Data ColumnIndex="2" RowIndex="11">Store</Data>
+            <Data ColumnIndex="3" RowIndex="11">1</Data>
+            <Data ColumnIndex="4" RowIndex="11">119.99</Data>
+            <Data ColumnIndex="0" RowIndex="12">Litware</Data>
+            <Data ColumnIndex="1" RowIndex="12">White</Data>
+            <Data ColumnIndex="2" RowIndex="12">Catalog</Data>
+            <Data ColumnIndex="3" RowIndex="12">1</Data>
+            <Data ColumnIndex="4" RowIndex="12">400.00</Data>
+            <Data ColumnIndex="0" RowIndex="13">Southridge Video</Data>
+            <Data ColumnIndex="1" RowIndex="13">White</Data>
+            <Data ColumnIndex="2" RowIndex="13">Store</Data>
+            <Data ColumnIndex="3" RowIndex="13">1</Data>
+            <Data ColumnIndex="4" RowIndex="13">109.99</Data>
+            <Data ColumnIndex="0" RowIndex="14">Proseware</Data>
+            <Data ColumnIndex="1" RowIndex="14">Black</Data>
+            <Data ColumnIndex="2" RowIndex="14">Store</Data>
+            <Data ColumnIndex="3" RowIndex="14">1</Data>
+            <Data ColumnIndex="4" RowIndex="14">49.00</Data>
+            <Data ColumnIndex="0" RowIndex="15">Southridge Video</Data>
+            <Data ColumnIndex="1" RowIndex="15">Black</Data>
+            <Data ColumnIndex="2" RowIndex="15">Store</Data>
+            <Data ColumnIndex="3" RowIndex="15">1</Data>
+            <Data ColumnIndex="4" RowIndex="15">0.95</Data>
+            <Data ColumnIndex="0" RowIndex="16">Proseware</Data>
+            <Data ColumnIndex="1" RowIndex="16">Silver</Data>
+            <Data ColumnIndex="2" RowIndex="16">Store</Data>
+            <Data ColumnIndex="3" RowIndex="16">1</Data>
+            <Data ColumnIndex="4" RowIndex="16">29.99</Data>
+            <Data ColumnIndex="0" RowIndex="17">Proseware</Data>
+            <Data ColumnIndex="1" RowIndex="17">Grey</Data>
+            <Data ColumnIndex="2" RowIndex="17">Store</Data>
+            <Data ColumnIndex="3" RowIndex="17">1</Data>
+            <Data ColumnIndex="4" RowIndex="17">229.00</Data>
+            <Data ColumnIndex="0" RowIndex="18">Litware</Data>
+            <Data ColumnIndex="1" RowIndex="18">White</Data>
+            <Data ColumnIndex="2" RowIndex="18">Store</Data>
+            <Data ColumnIndex="3" RowIndex="18">1</Data>
+            <Data ColumnIndex="4" RowIndex="18">9.99</Data>
+            <Data ColumnIndex="0" RowIndex="19">Adventure Works</Data>
+            <Data ColumnIndex="1" RowIndex="19">Silver</Data>
+            <Data ColumnIndex="2" RowIndex="19">Reseller</Data>
+            <Data ColumnIndex="3" RowIndex="19">1</Data>
+            <Data ColumnIndex="4" RowIndex="19">163.00</Data>
+            <Data ColumnIndex="0" RowIndex="20">Southridge Video</Data>
+            <Data ColumnIndex="1" RowIndex="20">Black</Data>
+            <Data ColumnIndex="2" RowIndex="20">Reseller</Data>
+            <Data ColumnIndex="3" RowIndex="20">1</Data>
+            <Data ColumnIndex="4" RowIndex="20">259.99</Data>
+            <Data ColumnIndex="0" RowIndex="21">Contoso</Data>
+            <Data ColumnIndex="1" RowIndex="21">Silver</Data>
+            <Data ColumnIndex="2" RowIndex="21">Reseller</Data>
+            <Data ColumnIndex="3" RowIndex="21">1</Data>
+            <Data ColumnIndex="4" RowIndex="21">109.99</Data>
+            <Data ColumnIndex="0" RowIndex="22">Fabrikam</Data>
+            <Data ColumnIndex="1" RowIndex="22">Orange</Data>
+            <Data ColumnIndex="2" RowIndex="22">Reseller</Data>
+            <Data ColumnIndex="3" RowIndex="22">1</Data>
+            <Data ColumnIndex="4" RowIndex="22">328.00</Data>
+            <Data ColumnIndex="0" RowIndex="23">Litware</Data>
+            <Data ColumnIndex="1" RowIndex="23">Black</Data>
+            <Data ColumnIndex="2" RowIndex="23">Online</Data>
+            <Data ColumnIndex="3" RowIndex="23">1</Data>
+            <Data ColumnIndex="4" RowIndex="23">36.83</Data>
+            <Data ColumnIndex="0" RowIndex="24">The Phone Company</Data>
+            <Data ColumnIndex="1" RowIndex="24">White</Data>
+            <Data ColumnIndex="2" RowIndex="24">Store</Data>
+            <Data ColumnIndex="3" RowIndex="24">1</Data>
+            <Data ColumnIndex="4" RowIndex="24">402.00</Data>
+            <Data ColumnIndex="0" RowIndex="25">Contoso</Data>
+            <Data ColumnIndex="1" RowIndex="25">White</Data>
+            <Data ColumnIndex="2" RowIndex="25">Store</Data>
+            <Data ColumnIndex="3" RowIndex="25">1</Data>
+            <Data ColumnIndex="4" RowIndex="25">109.99</Data>
+            <Data ColumnIndex="0" RowIndex="26">Fabrikam</Data>
+            <Data ColumnIndex="1" RowIndex="26">White</Data>
+            <Data ColumnIndex="2" RowIndex="26">Reseller</Data>
+            <Data ColumnIndex="3" RowIndex="26">1</Data>
+            <Data ColumnIndex="4" RowIndex="26">586.00</Data>
+            <Data ColumnIndex="0" RowIndex="27">Litware</Data>
+            <Data ColumnIndex="1" RowIndex="27">White</Data>
+            <Data ColumnIndex="2" RowIndex="27">Reseller</Data>
+            <Data ColumnIndex="3" RowIndex="27">1</Data>
+            <Data ColumnIndex="4" RowIndex="27">29.99</Data>
+            <Data ColumnIndex="0" RowIndex="28">A. Datum</Data>
+            <Data ColumnIndex="1" RowIndex="28">Grey</Data>
+            <Data ColumnIndex="2" RowIndex="28">Catalog</Data>
+            <Data ColumnIndex="3" RowIndex="28">1</Data>
+            <Data ColumnIndex="4" RowIndex="28">188.50</Data>
+            <Data ColumnIndex="0" RowIndex="29">Adventure Works</Data>
+            <Data ColumnIndex="1" RowIndex="29">White</Data>
+            <Data ColumnIndex="2" RowIndex="29">Reseller</Data>
+            <Data ColumnIndex="3" RowIndex="29">1</Data>
+            <Data ColumnIndex="4" RowIndex="29">469.97</Data>
+            <Data ColumnIndex="0" RowIndex="30">A. Datum</Data>
+            <Data ColumnIndex="1" RowIndex="30">Blue</Data>
+            <Data ColumnIndex="2" RowIndex="30">Store</Data>
+            <Data ColumnIndex="3" RowIndex="30">1</Data>
+            <Data ColumnIndex="4" RowIndex="30">588.00</Data>
+            <Data ColumnIndex="0" RowIndex="31">Contoso</Data>
+            <Data ColumnIndex="1" RowIndex="31">White</Data>
+            <Data ColumnIndex="2" RowIndex="31">Reseller</Data>
+            <Data ColumnIndex="3" RowIndex="31">1</Data>
+            <Data ColumnIndex="4" RowIndex="31">28.99</Data>
+            <Data ColumnIndex="0" RowIndex="32">Proseware</Data>
+            <Data ColumnIndex="1" RowIndex="32">Grey</Data>
+            <Data ColumnIndex="2" RowIndex="32">Reseller</Data>
+            <Data ColumnIndex="3" RowIndex="32">1</Data>
+            <Data ColumnIndex="4" RowIndex="32">78.00</Data>
+            <Data ColumnIndex="0" RowIndex="33">Fabrikam</Data>
+            <Data ColumnIndex="1" RowIndex="33">Grey</Data>
+            <Data ColumnIndex="2" RowIndex="33">Store</Data>
+            <Data ColumnIndex="3" RowIndex="33">1</Data>
+            <Data ColumnIndex="4" RowIndex="33">432.00</Data>
+            <Data ColumnIndex="0" RowIndex="34">Litware</Data>
+            <Data ColumnIndex="1" RowIndex="34">Brown</Data>
+            <Data ColumnIndex="2" RowIndex="34">Store</Data>
+            <Data ColumnIndex="3" RowIndex="34">1</Data>
+            <Data ColumnIndex="4" RowIndex="34">299.00</Data>
+            <Data ColumnIndex="0" RowIndex="35">Contoso</Data>
+            <Data ColumnIndex="1" RowIndex="35">White</Data>
+            <Data ColumnIndex="2" RowIndex="35">Catalog</Data>
+            <Data ColumnIndex="3" RowIndex="35">1</Data>
+            <Data ColumnIndex="4" RowIndex="35">59.99</Data>
+            <Data ColumnIndex="0" RowIndex="36">A. Datum</Data>
+            <Data ColumnIndex="1" RowIndex="36">Orange</Data>
+            <Data ColumnIndex="2" RowIndex="36">Online</Data>
+            <Data ColumnIndex="3" RowIndex="36">1</Data>
+            <Data ColumnIndex="4" RowIndex="36">588.00</Data>
+            <Data ColumnIndex="0" RowIndex="37">Contoso</Data>
+            <Data ColumnIndex="1" RowIndex="37">Blue</Data>
+            <Data ColumnIndex="2" RowIndex="37">Store</Data>
+            <Data ColumnIndex="3" RowIndex="37">1</Data>
+            <Data ColumnIndex="4" RowIndex="37">95.00</Data>
+            <Data ColumnIndex="0" RowIndex="38">Adventure Works</Data>
+            <Data ColumnIndex="1" RowIndex="38">Black</Data>
+            <Data ColumnIndex="2" RowIndex="38">Store</Data>
+            <Data ColumnIndex="3" RowIndex="38">1</Data>
+            <Data ColumnIndex="4" RowIndex="38">101.99</Data>
+            <Data ColumnIndex="0" RowIndex="39">Tailspin Toys</Data>
+            <Data ColumnIndex="1" RowIndex="39">Blue</Data>
+            <Data ColumnIndex="2" RowIndex="39">Online</Data>
+            <Data ColumnIndex="3" RowIndex="39">1</Data>
+            <Data ColumnIndex="4" RowIndex="39">109.00</Data>
+            <Data ColumnIndex="0" RowIndex="40">Litware</Data>
+            <Data ColumnIndex="1" RowIndex="40">Green</Data>
+            <Data ColumnIndex="2" RowIndex="40">Store</Data>
+            <Data ColumnIndex="3" RowIndex="40">1</Data>
+            <Data ColumnIndex="4" RowIndex="40">899.00</Data>
+            <Data ColumnIndex="0" RowIndex="41">Litware</Data>
+            <Data ColumnIndex="1" RowIndex="41">Silver</Data>
+            <Data ColumnIndex="2" RowIndex="41">Reseller</Data>
+            <Data ColumnIndex="3" RowIndex="41">1</Data>
+            <Data ColumnIndex="4" RowIndex="41">44.99</Data>
+            <Data ColumnIndex="0" RowIndex="42">Wide World Importers</Data>
+            <Data ColumnIndex="1" RowIndex="42">White</Data>
+            <Data ColumnIndex="2" RowIndex="42">Catalog</Data>
+            <Data ColumnIndex="3" RowIndex="42">2</Data>
+            <Data ColumnIndex="4" RowIndex="42">678.00</Data>
+            <Data ColumnIndex="0" RowIndex="43">Contoso</Data>
+            <Data ColumnIndex="1" RowIndex="43">Red</Data>
+            <Data ColumnIndex="2" RowIndex="43">Store</Data>
+            <Data ColumnIndex="3" RowIndex="43">1</Data>
+            <Data ColumnIndex="4" RowIndex="43">299.99</Data>
+            <Data ColumnIndex="0" RowIndex="44">Fabrikam</Data>
+            <Data ColumnIndex="1" RowIndex="44">Green</Data>
+            <Data ColumnIndex="2" RowIndex="44">Store</Data>
+            <Data ColumnIndex="3" RowIndex="44">1</Data>
+            <Data ColumnIndex="4" RowIndex="44">129.99</Data>
+            <Data ColumnIndex="0" RowIndex="45">Contoso</Data>
+            <Data ColumnIndex="1" RowIndex="45">Orange</Data>
+            <Data ColumnIndex="2" RowIndex="45">Catalog</Data>
+            <Data ColumnIndex="3" RowIndex="45">1</Data>
+            <Data ColumnIndex="4" RowIndex="45">322.00</Data>
+            <Data ColumnIndex="0" RowIndex="46">Fabrikam</Data>
+            <Data ColumnIndex="1" RowIndex="46">Black</Data>
+            <Data ColumnIndex="2" RowIndex="46">Reseller</Data>
+            <Data ColumnIndex="3" RowIndex="46">1</Data>
+            <Data ColumnIndex="4" RowIndex="46">655.00</Data>
+            <Data ColumnIndex="0" RowIndex="47">The Phone Company</Data>
+            <Data ColumnIndex="1" RowIndex="47">Black</Data>
+            <Data ColumnIndex="2" RowIndex="47">Store</Data>
+            <Data ColumnIndex="3" RowIndex="47">1</Data>
+            <Data ColumnIndex="4" RowIndex="47">268.00</Data>
+            <Data ColumnIndex="0" RowIndex="48">Litware</Data>
+            <Data ColumnIndex="1" RowIndex="48">Silver</Data>
+            <Data ColumnIndex="2" RowIndex="48">Online</Data>
+            <Data ColumnIndex="3" RowIndex="48">1</Data>
+            <Data ColumnIndex="4" RowIndex="48">579.00</Data>
+            <Data ColumnIndex="0" RowIndex="49">The Phone Company</Data>
+            <Data ColumnIndex="1" RowIndex="49">Black</Data>
+            <Data ColumnIndex="2" RowIndex="49">Reseller</Data>
+            <Data ColumnIndex="3" RowIndex="49">1</Data>
+            <Data ColumnIndex="4" RowIndex="49">310.00</Data>
+            <Data ColumnIndex="0" RowIndex="50">Litware</Data>
+            <Data ColumnIndex="1" RowIndex="50">Grey</Data>
+            <Data ColumnIndex="2" RowIndex="50">Online</Data>
+            <Data ColumnIndex="3" RowIndex="50">1</Data>
+            <Data ColumnIndex="4" RowIndex="50">665.94</Data>
+            <Data ColumnIndex="0" RowIndex="51">Litware</Data>
+            <Data ColumnIndex="1" RowIndex="51">Pink</Data>
+            <Data ColumnIndex="2" RowIndex="51">Catalog</Data>
+            <Data ColumnIndex="3" RowIndex="51">1</Data>
+            <Data ColumnIndex="4" RowIndex="51">30.99</Data>
+            <Data ColumnIndex="0" RowIndex="52">Contoso</Data>
+            <Data ColumnIndex="1" RowIndex="52">Black</Data>
+            <Data ColumnIndex="2" RowIndex="52">Catalog</Data>
+            <Data ColumnIndex="3" RowIndex="52">1</Data>
+            <Data ColumnIndex="4" RowIndex="52">3.35</Data>
+            <Data ColumnIndex="0" RowIndex="53">Wide World Importers</Data>
+            <Data ColumnIndex="1" RowIndex="53">Black</Data>
+            <Data ColumnIndex="2" RowIndex="53">Store</Data>
+            <Data ColumnIndex="3" RowIndex="53">1</Data>
+            <Data ColumnIndex="4" RowIndex="53">259.00</Data>
+            <Data ColumnIndex="0" RowIndex="54">Litware</Data>
+            <Data ColumnIndex="1" RowIndex="54">Blue</Data>
+            <Data ColumnIndex="2" RowIndex="54">Store</Data>
+            <Data ColumnIndex="3" RowIndex="54">1</Data>
+            <Data ColumnIndex="4" RowIndex="54">94.99</Data>
+            <Data ColumnIndex="0" RowIndex="55">Adventure Works</Data>
+            <Data ColumnIndex="1" RowIndex="55">Black</Data>
+            <Data ColumnIndex="2" RowIndex="55">Reseller</Data>
+            <Data ColumnIndex="3" RowIndex="55">1</Data>
+            <Data ColumnIndex="4" RowIndex="55">79.95</Data>
+            <Data ColumnIndex="0" RowIndex="56">Southridge Video</Data>
+            <Data ColumnIndex="1" RowIndex="56">Silver</Data>
+            <Data ColumnIndex="2" RowIndex="56">Store</Data>
+            <Data ColumnIndex="3" RowIndex="56">1</Data>
+            <Data ColumnIndex="4" RowIndex="56">8.88</Data>
+            <Data ColumnIndex="0" RowIndex="57">Wide World Importers</Data>
+            <Data ColumnIndex="1" RowIndex="57">Silver</Data>
+            <Data ColumnIndex="2" RowIndex="57">Store</Data>
+            <Data ColumnIndex="3" RowIndex="57">1</Data>
+            <Data ColumnIndex="4" RowIndex="57">699.00</Data>
+            <Data ColumnIndex="0" RowIndex="58">A. Datum</Data>
+            <Data ColumnIndex="1" RowIndex="58">Silver</Data>
+            <Data ColumnIndex="2" RowIndex="58">Store</Data>
+            <Data ColumnIndex="3" RowIndex="58">1</Data>
+            <Data ColumnIndex="4" RowIndex="58">281.00</Data>
+            <Data ColumnIndex="0" RowIndex="59">Litware</Data>
+            <Data ColumnIndex="1" RowIndex="59">Black</Data>
+            <Data ColumnIndex="2" RowIndex="59">Store</Data>
+            <Data ColumnIndex="3" RowIndex="59">1</Data>
+            <Data ColumnIndex="4" RowIndex="59">269.90</Data>
+            <Data ColumnIndex="0" RowIndex="60">Wide World Importers</Data>
+            <Data ColumnIndex="1" RowIndex="60">White</Data>
+            <Data ColumnIndex="2" RowIndex="60">Online</Data>
+            <Data ColumnIndex="3" RowIndex="60">2</Data>
+            <Data ColumnIndex="4" RowIndex="60">539.80</Data>
+            <Data ColumnIndex="0" RowIndex="61">Southridge Video</Data>
+            <Data ColumnIndex="1" RowIndex="61">Brown</Data>
+            <Data ColumnIndex="2" RowIndex="61">Store</Data>
+            <Data ColumnIndex="3" RowIndex="61">1</Data>
+            <Data ColumnIndex="4" RowIndex="61">199.00</Data>
+            <Data ColumnIndex="0" RowIndex="62">Adventure Works</Data>
+            <Data ColumnIndex="1" RowIndex="62">Silver</Data>
+            <Data ColumnIndex="2" RowIndex="62">Online</Data>
+            <Data ColumnIndex="3" RowIndex="62">1</Data>
+            <Data ColumnIndex="4" RowIndex="62">2899.99</Data>
+            <Data ColumnIndex="0" RowIndex="63">Contoso</Data>
+            <Data ColumnIndex="1" RowIndex="63">Silver</Data>
+            <Data ColumnIndex="2" RowIndex="63">Store</Data>
+            <Data ColumnIndex="3" RowIndex="63">1</Data>
+            <Data ColumnIndex="4" RowIndex="63">13.00</Data>
+            <Data ColumnIndex="0" RowIndex="64">Fabrikam</Data>
+            <Data ColumnIndex="1" RowIndex="64">Grey</Data>
+            <Data ColumnIndex="2" RowIndex="64">Online</Data>
+            <Data ColumnIndex="3" RowIndex="64">1</Data>
+            <Data ColumnIndex="4" RowIndex="64">1520.00</Data>
+            <Data ColumnIndex="0" RowIndex="65">Contoso</Data>
+            <Data ColumnIndex="1" RowIndex="65">Black</Data>
+            <Data ColumnIndex="2" RowIndex="65">Reseller</Data>
+            <Data ColumnIndex="3" RowIndex="65">1</Data>
+            <Data ColumnIndex="4" RowIndex="65">21.57</Data>
+            <Data ColumnIndex="0" RowIndex="66">Tailspin Toys</Data>
+            <Data ColumnIndex="1" RowIndex="66">Black</Data>
+            <Data ColumnIndex="2" RowIndex="66">Online</Data>
+            <Data ColumnIndex="3" RowIndex="66">1</Data>
+            <Data ColumnIndex="4" RowIndex="66">64.90</Data>
+            <Data ColumnIndex="0" RowIndex="67">The Phone Company</Data>
+            <Data ColumnIndex="1" RowIndex="67">Grey</Data>
+            <Data ColumnIndex="2" RowIndex="67">Store</Data>
+            <Data ColumnIndex="3" RowIndex="67">1</Data>
+            <Data ColumnIndex="4" RowIndex="67">208.00</Data>
+            <Data ColumnIndex="0" RowIndex="68">Contoso</Data>
+            <Data ColumnIndex="1" RowIndex="68">Grey</Data>
+            <Data ColumnIndex="2" RowIndex="68">Store</Data>
+            <Data ColumnIndex="3" RowIndex="68">1</Data>
+            <Data ColumnIndex="4" RowIndex="68">304.00</Data>
+            <Data ColumnIndex="0" RowIndex="69">Wide World Importers</Data>
+            <Data ColumnIndex="1" RowIndex="69">Blue</Data>
+            <Data ColumnIndex="2" RowIndex="69">Store</Data>
+            <Data ColumnIndex="3" RowIndex="69">1</Data>
+            <Data ColumnIndex="4" RowIndex="69">229.99</Data>
+            <Data ColumnIndex="0" RowIndex="70">Adventure Works</Data>
+            <Data ColumnIndex="1" RowIndex="70">Grey</Data>
+            <Data ColumnIndex="2" RowIndex="70">Store</Data>
+            <Data ColumnIndex="3" RowIndex="70">1</Data>
+            <Data ColumnIndex="4" RowIndex="70">163.00</Data>
+            <Data ColumnIndex="0" RowIndex="71">Litware</Data>
+            <Data ColumnIndex="1" RowIndex="71">Pink</Data>
+            <Data ColumnIndex="2" RowIndex="71">Store</Data>
+            <Data ColumnIndex="3" RowIndex="71">1</Data>
+            <Data ColumnIndex="4" RowIndex="71">32.89</Data>
+            <Data ColumnIndex="0" RowIndex="72">Proseware</Data>
+            <Data ColumnIndex="1" RowIndex="72">White</Data>
+            <Data ColumnIndex="2" RowIndex="72">Store</Data>
+            <Data ColumnIndex="3" RowIndex="72">1</Data>
+            <Data ColumnIndex="4" RowIndex="72">101.99</Data>
+            <Data ColumnIndex="0" RowIndex="73">Litware</Data>
+            <Data ColumnIndex="1" RowIndex="73">Grey</Data>
+            <Data ColumnIndex="2" RowIndex="73">Store</Data>
+            <Data ColumnIndex="3" RowIndex="73">1</Data>
+            <Data ColumnIndex="4" RowIndex="73">94.99</Data>
+            <Data ColumnIndex="0" RowIndex="74">Proseware</Data>
+            <Data ColumnIndex="1" RowIndex="74">Silver</Data>
+            <Data ColumnIndex="2" RowIndex="74">Catalog</Data>
+            <Data ColumnIndex="3" RowIndex="74">1</Data>
+            <Data ColumnIndex="4" RowIndex="74">459.99</Data>
+            <Data ColumnIndex="0" RowIndex="75">Proseware</Data>
+            <Data ColumnIndex="1" RowIndex="75">Green</Data>
+            <Data ColumnIndex="2" RowIndex="75">Store</Data>
+            <Data ColumnIndex="3" RowIndex="75">1</Data>
+            <Data ColumnIndex="4" RowIndex="75">102.00</Data>
+            <Data ColumnIndex="0" RowIndex="76">Litware</Data>
+            <Data ColumnIndex="1" RowIndex="76">Orange</Data>
+            <Data ColumnIndex="2" RowIndex="76">Store</Data>
+            <Data ColumnIndex="3" RowIndex="76">1</Data>
+            <Data ColumnIndex="4" RowIndex="76">129.99</Data>
+            <Data ColumnIndex="0" RowIndex="77">Fabrikam</Data>
+            <Data ColumnIndex="1" RowIndex="77">Orange</Data>
+            <Data ColumnIndex="2" RowIndex="77">Online</Data>
+            <Data ColumnIndex="3" RowIndex="77">1</Data>
+            <Data ColumnIndex="4" RowIndex="77">129.99</Data>
+            <Data ColumnIndex="0" RowIndex="78">Fabrikam</Data>
+            <Data ColumnIndex="1" RowIndex="78">Orange</Data>
+            <Data ColumnIndex="2" RowIndex="78">Store</Data>
+            <Data ColumnIndex="3" RowIndex="78">1</Data>
+            <Data ColumnIndex="4" RowIndex="78">850.00</Data>
+            <Data ColumnIndex="0" RowIndex="79">Wide World Importers</Data>
+            <Data ColumnIndex="1" RowIndex="79">Black</Data>
+            <Data ColumnIndex="2" RowIndex="79">Online</Data>
+            <Data ColumnIndex="3" RowIndex="79">1</Data>
+            <Data ColumnIndex="4" RowIndex="79">79.95</Data>
+            <Data ColumnIndex="0" RowIndex="80">Fabrikam</Data>
+            <Data ColumnIndex="1" RowIndex="80">Red</Data>
+            <Data ColumnIndex="2" RowIndex="80">Online</Data>
+            <Data ColumnIndex="3" RowIndex="80">1</Data>
+            <Data ColumnIndex="4" RowIndex="80">139.99</Data>
+            <Data ColumnIndex="0" RowIndex="81">Southridge Video</Data>
+            <Data ColumnIndex="1" RowIndex="81">Yellow</Data>
+            <Data ColumnIndex="2" RowIndex="81">Reseller</Data>
+            <Data ColumnIndex="3" RowIndex="81">1</Data>
+            <Data ColumnIndex="4" RowIndex="81">79.00</Data>
+            <Data ColumnIndex="0" RowIndex="82">Proseware</Data>
+            <Data ColumnIndex="1" RowIndex="82">White</Data>
+            <Data ColumnIndex="2" RowIndex="82">Online</Data>
+            <Data ColumnIndex="3" RowIndex="82">1</Data>
+            <Data ColumnIndex="4" RowIndex="82">49.00</Data>
+            <Data ColumnIndex="0" RowIndex="83">Northwind Traders</Data>
+            <Data ColumnIndex="1" RowIndex="83">Yellow</Data>
+            <Data ColumnIndex="2" RowIndex="83">Store</Data>
+            <Data ColumnIndex="3" RowIndex="83">1</Data>
+            <Data ColumnIndex="4" RowIndex="83">25.69</Data>
+            <Data ColumnIndex="0" RowIndex="84">Fabrikam</Data>
+            <Data ColumnIndex="1" RowIndex="84">Blue</Data>
+            <Data ColumnIndex="2" RowIndex="84">Store</Data>
+            <Data ColumnIndex="3" RowIndex="84">1</Data>
+            <Data ColumnIndex="4" RowIndex="84">299.99</Data>
+            <Data ColumnIndex="0" RowIndex="85">A. Datum</Data>
+            <Data ColumnIndex="1" RowIndex="85">Pink</Data>
+            <Data ColumnIndex="2" RowIndex="85">Reseller</Data>
+            <Data ColumnIndex="3" RowIndex="85">1</Data>
+            <Data ColumnIndex="4" RowIndex="85">231.00</Data>
+            <Data ColumnIndex="0" RowIndex="86">Southridge Video</Data>
+            <Data ColumnIndex="1" RowIndex="86">Red</Data>
+            <Data ColumnIndex="2" RowIndex="86">Store</Data>
+            <Data ColumnIndex="3" RowIndex="86">1</Data>
+            <Data ColumnIndex="4" RowIndex="86">75.99</Data>
+            <Data ColumnIndex="0" RowIndex="87">Fabrikam</Data>
+            <Data ColumnIndex="1" RowIndex="87">Black</Data>
+            <Data ColumnIndex="2" RowIndex="87">Store</Data>
+            <Data ColumnIndex="3" RowIndex="87">1</Data>
+            <Data ColumnIndex="4" RowIndex="87">99.99</Data>
+            <Data ColumnIndex="0" RowIndex="88">Adventure Works</Data>
+            <Data ColumnIndex="1" RowIndex="88">Red</Data>
+            <Data ColumnIndex="2" RowIndex="88">Store</Data>
+            <Data ColumnIndex="3" RowIndex="88">1</Data>
+            <Data ColumnIndex="4" RowIndex="88">382.95</Data>
+            <Data ColumnIndex="0" RowIndex="89">Contoso</Data>
+            <Data ColumnIndex="1" RowIndex="89">White</Data>
+            <Data ColumnIndex="2" RowIndex="89">Online</Data>
+            <Data ColumnIndex="3" RowIndex="89">1</Data>
+            <Data ColumnIndex="4" RowIndex="89">49.99</Data>
+            <Data ColumnIndex="0" RowIndex="90">The Phone Company</Data>
+            <Data ColumnIndex="1" RowIndex="90">White</Data>
+            <Data ColumnIndex="2" RowIndex="90">Online</Data>
+            <Data ColumnIndex="3" RowIndex="90">1</Data>
+            <Data ColumnIndex="4" RowIndex="90">208.00</Data>
+            <Data ColumnIndex="0" RowIndex="91">Proseware</Data>
+            <Data ColumnIndex="1" RowIndex="91">Grey</Data>
+            <Data ColumnIndex="2" RowIndex="91">Catalog</Data>
+            <Data ColumnIndex="3" RowIndex="91">1</Data>
+            <Data ColumnIndex="4" RowIndex="91">190.00</Data>
+            <Data ColumnIndex="0" RowIndex="92">Adventure Works</Data>
+            <Data ColumnIndex="1" RowIndex="92">Black</Data>
+            <Data ColumnIndex="2" RowIndex="92">Online</Data>
+            <Data ColumnIndex="3" RowIndex="92">1</Data>
+            <Data ColumnIndex="4" RowIndex="92">269.95</Data>
+            <Data ColumnIndex="0" RowIndex="93">Adventure Works</Data>
+            <Data ColumnIndex="1" RowIndex="93">Blue</Data>
+            <Data ColumnIndex="2" RowIndex="93">Store</Data>
+            <Data ColumnIndex="3" RowIndex="93">1</Data>
+            <Data ColumnIndex="4" RowIndex="93">229.99</Data>
+            <Data ColumnIndex="0" RowIndex="94">Fabrikam</Data>
+            <Data ColumnIndex="1" RowIndex="94">Black</Data>
+            <Data ColumnIndex="2" RowIndex="94">Online</Data>
+            <Data ColumnIndex="3" RowIndex="94">1</Data>
+            <Data ColumnIndex="4" RowIndex="94">620.00</Data>
+            <Data ColumnIndex="0" RowIndex="95">Adventure Works</Data>
+            <Data ColumnIndex="1" RowIndex="95">Red</Data>
+            <Data ColumnIndex="2" RowIndex="95">Catalog</Data>
+            <Data ColumnIndex="3" RowIndex="95">1</Data>
+            <Data ColumnIndex="4" RowIndex="95">1299.00</Data>
+            <Data ColumnIndex="0" RowIndex="96">Tailspin Toys</Data>
+            <Data ColumnIndex="1" RowIndex="96">Pink</Data>
+            <Data ColumnIndex="2" RowIndex="96">Online</Data>
+            <Data ColumnIndex="3" RowIndex="96">1</Data>
+            <Data ColumnIndex="4" RowIndex="96">56.00</Data>
+          </DataGrid>
+        </rd:DesignerState>
+        <CommandText>&lt;Query&gt;
+  &lt;XmlData&gt;
+    &lt;Data&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Wide World Importers&lt;/BrandName&gt;
+        &lt;ColorName&gt;White&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;199.95&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Proseware&lt;/BrandName&gt;
+        &lt;ColorName&gt;Silver&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Online&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;190.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Fabrikam&lt;/BrandName&gt;
+        &lt;ColorName&gt;Silver&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;139.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Tailspin Toys&lt;/BrandName&gt;
+        &lt;ColorName&gt;Red&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;16.89&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Litware&lt;/BrandName&gt;
+        &lt;ColorName&gt;Black&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Reseller&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;689.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;The Phone Company&lt;/BrandName&gt;
+        &lt;ColorName&gt;Grey&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Catalog&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;258.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;The Phone Company&lt;/BrandName&gt;
+        &lt;ColorName&gt;White&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Catalog&lt;/ChannelName&gt;
+        &lt;Quantity&gt;2&lt;/Quantity&gt;
+        &lt;Amount&gt;460.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Contoso&lt;/BrandName&gt;
+        &lt;ColorName&gt;Black&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Online&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;4.06&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Fabrikam&lt;/BrandName&gt;
+        &lt;ColorName&gt;White&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;149.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Contoso&lt;/BrandName&gt;
+        &lt;ColorName&gt;Black&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;409.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Adventure Works&lt;/BrandName&gt;
+        &lt;ColorName&gt;Silver&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;499.90&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Litware&lt;/BrandName&gt;
+        &lt;ColorName&gt;Silver&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;119.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Litware&lt;/BrandName&gt;
+        &lt;ColorName&gt;White&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Catalog&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;400.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Southridge Video&lt;/BrandName&gt;
+        &lt;ColorName&gt;White&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;109.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Proseware&lt;/BrandName&gt;
+        &lt;ColorName&gt;Black&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;49.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Southridge Video&lt;/BrandName&gt;
+        &lt;ColorName&gt;Black&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;0.95&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Proseware&lt;/BrandName&gt;
+        &lt;ColorName&gt;Silver&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;29.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Proseware&lt;/BrandName&gt;
+        &lt;ColorName&gt;Grey&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;229.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Litware&lt;/BrandName&gt;
+        &lt;ColorName&gt;White&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;9.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Adventure Works&lt;/BrandName&gt;
+        &lt;ColorName&gt;Silver&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Reseller&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;163.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Southridge Video&lt;/BrandName&gt;
+        &lt;ColorName&gt;Black&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Reseller&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;259.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Contoso&lt;/BrandName&gt;
+        &lt;ColorName&gt;Silver&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Reseller&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;109.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Fabrikam&lt;/BrandName&gt;
+        &lt;ColorName&gt;Orange&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Reseller&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;328.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Litware&lt;/BrandName&gt;
+        &lt;ColorName&gt;Black&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Online&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;36.83&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;The Phone Company&lt;/BrandName&gt;
+        &lt;ColorName&gt;White&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;402.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Contoso&lt;/BrandName&gt;
+        &lt;ColorName&gt;White&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;109.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Fabrikam&lt;/BrandName&gt;
+        &lt;ColorName&gt;White&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Reseller&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;586.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Litware&lt;/BrandName&gt;
+        &lt;ColorName&gt;White&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Reseller&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;29.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;A. Datum&lt;/BrandName&gt;
+        &lt;ColorName&gt;Grey&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Catalog&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;188.50&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Adventure Works&lt;/BrandName&gt;
+        &lt;ColorName&gt;White&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Reseller&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;469.97&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;A. Datum&lt;/BrandName&gt;
+        &lt;ColorName&gt;Blue&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;588.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Contoso&lt;/BrandName&gt;
+        &lt;ColorName&gt;White&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Reseller&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;28.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Proseware&lt;/BrandName&gt;
+        &lt;ColorName&gt;Grey&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Reseller&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;78.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Fabrikam&lt;/BrandName&gt;
+        &lt;ColorName&gt;Grey&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;432.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Litware&lt;/BrandName&gt;
+        &lt;ColorName&gt;Brown&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;299.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Contoso&lt;/BrandName&gt;
+        &lt;ColorName&gt;White&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Catalog&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;59.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;A. Datum&lt;/BrandName&gt;
+        &lt;ColorName&gt;Orange&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Online&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;588.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Contoso&lt;/BrandName&gt;
+        &lt;ColorName&gt;Blue&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;95.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Adventure Works&lt;/BrandName&gt;
+        &lt;ColorName&gt;Black&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;101.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Tailspin Toys&lt;/BrandName&gt;
+        &lt;ColorName&gt;Blue&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Online&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;109.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Litware&lt;/BrandName&gt;
+        &lt;ColorName&gt;Green&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;899.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Litware&lt;/BrandName&gt;
+        &lt;ColorName&gt;Silver&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Reseller&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;44.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Wide World Importers&lt;/BrandName&gt;
+        &lt;ColorName&gt;White&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Catalog&lt;/ChannelName&gt;
+        &lt;Quantity&gt;2&lt;/Quantity&gt;
+        &lt;Amount&gt;678.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Contoso&lt;/BrandName&gt;
+        &lt;ColorName&gt;Red&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;299.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Fabrikam&lt;/BrandName&gt;
+        &lt;ColorName&gt;Green&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;129.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Contoso&lt;/BrandName&gt;
+        &lt;ColorName&gt;Orange&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Catalog&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;322.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Fabrikam&lt;/BrandName&gt;
+        &lt;ColorName&gt;Black&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Reseller&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;655.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;The Phone Company&lt;/BrandName&gt;
+        &lt;ColorName&gt;Black&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;268.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Litware&lt;/BrandName&gt;
+        &lt;ColorName&gt;Silver&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Online&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;579.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;The Phone Company&lt;/BrandName&gt;
+        &lt;ColorName&gt;Black&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Reseller&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;310.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Litware&lt;/BrandName&gt;
+        &lt;ColorName&gt;Grey&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Online&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;665.94&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Litware&lt;/BrandName&gt;
+        &lt;ColorName&gt;Pink&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Catalog&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;30.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Contoso&lt;/BrandName&gt;
+        &lt;ColorName&gt;Black&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Catalog&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;3.35&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Wide World Importers&lt;/BrandName&gt;
+        &lt;ColorName&gt;Black&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;259.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Litware&lt;/BrandName&gt;
+        &lt;ColorName&gt;Blue&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;94.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Adventure Works&lt;/BrandName&gt;
+        &lt;ColorName&gt;Black&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Reseller&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;79.95&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Southridge Video&lt;/BrandName&gt;
+        &lt;ColorName&gt;Silver&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;8.88&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Wide World Importers&lt;/BrandName&gt;
+        &lt;ColorName&gt;Silver&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;699.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;A. Datum&lt;/BrandName&gt;
+        &lt;ColorName&gt;Silver&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;281.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Litware&lt;/BrandName&gt;
+        &lt;ColorName&gt;Black&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;269.90&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Wide World Importers&lt;/BrandName&gt;
+        &lt;ColorName&gt;White&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Online&lt;/ChannelName&gt;
+        &lt;Quantity&gt;2&lt;/Quantity&gt;
+        &lt;Amount&gt;539.80&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Southridge Video&lt;/BrandName&gt;
+        &lt;ColorName&gt;Brown&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;199.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Adventure Works&lt;/BrandName&gt;
+        &lt;ColorName&gt;Silver&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Online&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;2899.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Contoso&lt;/BrandName&gt;
+        &lt;ColorName&gt;Silver&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;13.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Fabrikam&lt;/BrandName&gt;
+        &lt;ColorName&gt;Grey&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Online&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;1520.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Contoso&lt;/BrandName&gt;
+        &lt;ColorName&gt;Black&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Reseller&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;21.57&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Tailspin Toys&lt;/BrandName&gt;
+        &lt;ColorName&gt;Black&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Online&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;64.90&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;The Phone Company&lt;/BrandName&gt;
+        &lt;ColorName&gt;Grey&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;208.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Contoso&lt;/BrandName&gt;
+        &lt;ColorName&gt;Grey&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;304.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Wide World Importers&lt;/BrandName&gt;
+        &lt;ColorName&gt;Blue&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;229.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Adventure Works&lt;/BrandName&gt;
+        &lt;ColorName&gt;Grey&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;163.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Litware&lt;/BrandName&gt;
+        &lt;ColorName&gt;Pink&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;32.89&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Proseware&lt;/BrandName&gt;
+        &lt;ColorName&gt;White&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;101.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Litware&lt;/BrandName&gt;
+        &lt;ColorName&gt;Grey&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;94.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Proseware&lt;/BrandName&gt;
+        &lt;ColorName&gt;Silver&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Catalog&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;459.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Proseware&lt;/BrandName&gt;
+        &lt;ColorName&gt;Green&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;102.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Litware&lt;/BrandName&gt;
+        &lt;ColorName&gt;Orange&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;129.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Fabrikam&lt;/BrandName&gt;
+        &lt;ColorName&gt;Orange&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Online&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;129.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Fabrikam&lt;/BrandName&gt;
+        &lt;ColorName&gt;Orange&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;850.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Wide World Importers&lt;/BrandName&gt;
+        &lt;ColorName&gt;Black&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Online&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;79.95&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Fabrikam&lt;/BrandName&gt;
+        &lt;ColorName&gt;Red&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Online&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;139.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Southridge Video&lt;/BrandName&gt;
+        &lt;ColorName&gt;Yellow&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Reseller&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;79.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Proseware&lt;/BrandName&gt;
+        &lt;ColorName&gt;White&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Online&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;49.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Northwind Traders&lt;/BrandName&gt;
+        &lt;ColorName&gt;Yellow&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;25.69&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Fabrikam&lt;/BrandName&gt;
+        &lt;ColorName&gt;Blue&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;299.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;A. Datum&lt;/BrandName&gt;
+        &lt;ColorName&gt;Pink&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Reseller&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;231.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Southridge Video&lt;/BrandName&gt;
+        &lt;ColorName&gt;Red&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;75.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Fabrikam&lt;/BrandName&gt;
+        &lt;ColorName&gt;Black&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;99.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Adventure Works&lt;/BrandName&gt;
+        &lt;ColorName&gt;Red&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;382.95&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Contoso&lt;/BrandName&gt;
+        &lt;ColorName&gt;White&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Online&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;49.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;The Phone Company&lt;/BrandName&gt;
+        &lt;ColorName&gt;White&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Online&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;208.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Proseware&lt;/BrandName&gt;
+        &lt;ColorName&gt;Grey&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Catalog&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;190.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Adventure Works&lt;/BrandName&gt;
+        &lt;ColorName&gt;Black&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Online&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;269.95&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Adventure Works&lt;/BrandName&gt;
+        &lt;ColorName&gt;Blue&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Store&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;229.99&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Fabrikam&lt;/BrandName&gt;
+        &lt;ColorName&gt;Black&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Online&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;620.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Adventure Works&lt;/BrandName&gt;
+        &lt;ColorName&gt;Red&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Catalog&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;1299.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;BrandName&gt;Tailspin Toys&lt;/BrandName&gt;
+        &lt;ColorName&gt;Pink&lt;/ColorName&gt;
+        &lt;ChannelName&gt;Online&lt;/ChannelName&gt;
+        &lt;Quantity&gt;1&lt;/Quantity&gt;
+        &lt;Amount&gt;56.00&lt;/Amount&gt;
+      &lt;/Row&gt;
+    &lt;/Data&gt;
+  &lt;/XmlData&gt;
+  &lt;ElementPath&gt;Data{}/Row{BrandName(String),ColorName(String),ChannelName(String),Quantity(String),Amount(Float)}&lt;/ElementPath&gt;
+&lt;/Query&gt;</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="BrandName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>BrandName</DataField>
+        </Field>
+        <Field Name="ColorName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ColorName</DataField>
+        </Field>
+        <Field Name="ChannelName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ChannelName</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="Amount">
+          <rd:TypeName>System.Double</rd:TypeName>
+          <DataField>Amount</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Median">
+      <Query>
+        <DataSourceName>EnterDate</DataSourceName>
+        <rd:DesignerState>
+          <DataGrid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="">
+            <RowNumber>97</RowNumber>
+            <ColumnNumber>2</ColumnNumber>
+            <ColumnName ColumnIndex="0" ColumnWidth="100" DataType="String">Site</ColumnName>
+            <ColumnName ColumnIndex="1" ColumnWidth="100" DataType="String">Number</ColumnName>
+            <Data ColumnIndex="0" RowIndex="0">Store</Data>
+            <Data ColumnIndex="1" RowIndex="0">346</Data>
+            <Data ColumnIndex="0" RowIndex="1">Online</Data>
+            <Data ColumnIndex="1" RowIndex="1">2879</Data>
+            <Data ColumnIndex="0" RowIndex="2">Store</Data>
+            <Data ColumnIndex="1" RowIndex="2">857</Data>
+            <Data ColumnIndex="0" RowIndex="3">Store</Data>
+            <Data ColumnIndex="1" RowIndex="3">2389</Data>
+            <Data ColumnIndex="0" RowIndex="4">Reseller</Data>
+            <Data ColumnIndex="1" RowIndex="4">4958</Data>
+            <Data ColumnIndex="0" RowIndex="5">Catalog</Data>
+            <Data ColumnIndex="1" RowIndex="5">112</Data>
+            <Data ColumnIndex="0" RowIndex="6">Catalog</Data>
+            <Data ColumnIndex="1" RowIndex="6">3883</Data>
+            <Data ColumnIndex="0" RowIndex="7">Online</Data>
+            <Data ColumnIndex="1" RowIndex="7">6960</Data>
+            <Data ColumnIndex="0" RowIndex="8">Store</Data>
+            <Data ColumnIndex="1" RowIndex="8">9438</Data>
+            <Data ColumnIndex="0" RowIndex="9">Store</Data>
+            <Data ColumnIndex="1" RowIndex="9">7596</Data>
+            <Data ColumnIndex="0" RowIndex="10">Store</Data>
+            <Data ColumnIndex="1" RowIndex="10">9944</Data>
+            <Data ColumnIndex="0" RowIndex="11">Store</Data>
+            <Data ColumnIndex="1" RowIndex="11">2937</Data>
+            <Data ColumnIndex="0" RowIndex="12">Catalog</Data>
+            <Data ColumnIndex="1" RowIndex="12">7372</Data>
+            <Data ColumnIndex="0" RowIndex="13">Store</Data>
+            <Data ColumnIndex="1" RowIndex="13">3026</Data>
+            <Data ColumnIndex="0" RowIndex="14">Store</Data>
+            <Data ColumnIndex="1" RowIndex="14">9739</Data>
+            <Data ColumnIndex="0" RowIndex="15">Store</Data>
+            <Data ColumnIndex="1" RowIndex="15">6638</Data>
+            <Data ColumnIndex="0" RowIndex="16">Store</Data>
+            <Data ColumnIndex="1" RowIndex="16">7582</Data>
+            <Data ColumnIndex="0" RowIndex="17">Store</Data>
+            <Data ColumnIndex="1" RowIndex="17">9990</Data>
+            <Data ColumnIndex="0" RowIndex="18">Store</Data>
+            <Data ColumnIndex="1" RowIndex="18">9932</Data>
+            <Data ColumnIndex="0" RowIndex="19">Reseller</Data>
+            <Data ColumnIndex="1" RowIndex="19">9144</Data>
+            <Data ColumnIndex="0" RowIndex="20">Reseller</Data>
+            <Data ColumnIndex="1" RowIndex="20">2179</Data>
+            <Data ColumnIndex="0" RowIndex="21">Reseller</Data>
+            <Data ColumnIndex="1" RowIndex="21">6175</Data>
+            <Data ColumnIndex="0" RowIndex="22">Reseller</Data>
+            <Data ColumnIndex="1" RowIndex="22">6569</Data>
+            <Data ColumnIndex="0" RowIndex="23">Online</Data>
+            <Data ColumnIndex="1" RowIndex="23">903</Data>
+            <Data ColumnIndex="0" RowIndex="24">Store</Data>
+            <Data ColumnIndex="1" RowIndex="24">3346</Data>
+            <Data ColumnIndex="0" RowIndex="25">Store</Data>
+            <Data ColumnIndex="1" RowIndex="25">7379</Data>
+            <Data ColumnIndex="0" RowIndex="26">Reseller</Data>
+            <Data ColumnIndex="1" RowIndex="26">3451</Data>
+            <Data ColumnIndex="0" RowIndex="27">Reseller</Data>
+            <Data ColumnIndex="1" RowIndex="27">3968</Data>
+            <Data ColumnIndex="0" RowIndex="28">Catalog</Data>
+            <Data ColumnIndex="1" RowIndex="28">5306</Data>
+            <Data ColumnIndex="0" RowIndex="29">Reseller</Data>
+            <Data ColumnIndex="1" RowIndex="29">7829</Data>
+            <Data ColumnIndex="0" RowIndex="30">Store</Data>
+            <Data ColumnIndex="1" RowIndex="30">1869</Data>
+            <Data ColumnIndex="0" RowIndex="31">Reseller</Data>
+            <Data ColumnIndex="1" RowIndex="31">5327</Data>
+            <Data ColumnIndex="0" RowIndex="32">Reseller</Data>
+            <Data ColumnIndex="1" RowIndex="32">8175</Data>
+            <Data ColumnIndex="0" RowIndex="33">Store</Data>
+            <Data ColumnIndex="1" RowIndex="33">657</Data>
+            <Data ColumnIndex="0" RowIndex="34">Store</Data>
+            <Data ColumnIndex="1" RowIndex="34">3950</Data>
+            <Data ColumnIndex="0" RowIndex="35">Catalog</Data>
+            <Data ColumnIndex="1" RowIndex="35">250</Data>
+            <Data ColumnIndex="0" RowIndex="36">Online</Data>
+            <Data ColumnIndex="1" RowIndex="36">7374</Data>
+            <Data ColumnIndex="0" RowIndex="37">Store</Data>
+            <Data ColumnIndex="1" RowIndex="37">9607</Data>
+            <Data ColumnIndex="0" RowIndex="38">Store</Data>
+            <Data ColumnIndex="1" RowIndex="38">7554</Data>
+            <Data ColumnIndex="0" RowIndex="39">Online</Data>
+            <Data ColumnIndex="1" RowIndex="39">3656</Data>
+            <Data ColumnIndex="0" RowIndex="40">Store</Data>
+            <Data ColumnIndex="1" RowIndex="40">6818</Data>
+            <Data ColumnIndex="0" RowIndex="41">Reseller</Data>
+            <Data ColumnIndex="1" RowIndex="41">1444</Data>
+            <Data ColumnIndex="0" RowIndex="42">Catalog</Data>
+            <Data ColumnIndex="1" RowIndex="42">2944</Data>
+            <Data ColumnIndex="0" RowIndex="43">Store</Data>
+            <Data ColumnIndex="1" RowIndex="43">5084</Data>
+            <Data ColumnIndex="0" RowIndex="44">Store</Data>
+            <Data ColumnIndex="1" RowIndex="44">2086</Data>
+            <Data ColumnIndex="0" RowIndex="45">Catalog</Data>
+            <Data ColumnIndex="1" RowIndex="45">8148</Data>
+            <Data ColumnIndex="0" RowIndex="46">Reseller</Data>
+            <Data ColumnIndex="1" RowIndex="46">7895</Data>
+            <Data ColumnIndex="0" RowIndex="47">Store</Data>
+            <Data ColumnIndex="1" RowIndex="47">5207</Data>
+            <Data ColumnIndex="0" RowIndex="48">Online</Data>
+            <Data ColumnIndex="1" RowIndex="48">8649</Data>
+            <Data ColumnIndex="0" RowIndex="49">Reseller</Data>
+            <Data ColumnIndex="1" RowIndex="49">5073</Data>
+            <Data ColumnIndex="0" RowIndex="50">Online</Data>
+            <Data ColumnIndex="1" RowIndex="50">7524</Data>
+            <Data ColumnIndex="0" RowIndex="51">Catalog</Data>
+            <Data ColumnIndex="1" RowIndex="51">3860</Data>
+            <Data ColumnIndex="0" RowIndex="52">Catalog</Data>
+            <Data ColumnIndex="1" RowIndex="52">1552</Data>
+            <Data ColumnIndex="0" RowIndex="53">Store</Data>
+            <Data ColumnIndex="1" RowIndex="53">9256</Data>
+            <Data ColumnIndex="0" RowIndex="54">Store</Data>
+            <Data ColumnIndex="1" RowIndex="54">9002</Data>
+            <Data ColumnIndex="0" RowIndex="55">Reseller</Data>
+            <Data ColumnIndex="1" RowIndex="55">3961</Data>
+            <Data ColumnIndex="0" RowIndex="56">Store</Data>
+            <Data ColumnIndex="1" RowIndex="56">8802</Data>
+            <Data ColumnIndex="0" RowIndex="57">Store</Data>
+            <Data ColumnIndex="1" RowIndex="57">3930</Data>
+            <Data ColumnIndex="0" RowIndex="58">Store</Data>
+            <Data ColumnIndex="1" RowIndex="58">5496</Data>
+            <Data ColumnIndex="0" RowIndex="59">Store</Data>
+            <Data ColumnIndex="1" RowIndex="59">2241</Data>
+            <Data ColumnIndex="0" RowIndex="60">Online</Data>
+            <Data ColumnIndex="1" RowIndex="60">9013</Data>
+            <Data ColumnIndex="0" RowIndex="61">Store</Data>
+            <Data ColumnIndex="1" RowIndex="61">6132</Data>
+            <Data ColumnIndex="0" RowIndex="62">Online</Data>
+            <Data ColumnIndex="1" RowIndex="62">6935</Data>
+            <Data ColumnIndex="0" RowIndex="63">Store</Data>
+            <Data ColumnIndex="1" RowIndex="63">1726</Data>
+            <Data ColumnIndex="0" RowIndex="64">Online</Data>
+            <Data ColumnIndex="1" RowIndex="64">1583</Data>
+            <Data ColumnIndex="0" RowIndex="65">Reseller</Data>
+            <Data ColumnIndex="1" RowIndex="65">9964</Data>
+            <Data ColumnIndex="0" RowIndex="66">Online</Data>
+            <Data ColumnIndex="1" RowIndex="66">2032</Data>
+            <Data ColumnIndex="0" RowIndex="67">Store</Data>
+            <Data ColumnIndex="1" RowIndex="67">2991</Data>
+            <Data ColumnIndex="0" RowIndex="68">Store</Data>
+            <Data ColumnIndex="1" RowIndex="68">7790</Data>
+            <Data ColumnIndex="0" RowIndex="69">Store</Data>
+            <Data ColumnIndex="1" RowIndex="69">9521</Data>
+            <Data ColumnIndex="0" RowIndex="70">Store</Data>
+            <Data ColumnIndex="1" RowIndex="70">3321</Data>
+            <Data ColumnIndex="0" RowIndex="71">Store</Data>
+            <Data ColumnIndex="1" RowIndex="71">3008</Data>
+            <Data ColumnIndex="0" RowIndex="72">Store</Data>
+            <Data ColumnIndex="1" RowIndex="72">1600</Data>
+            <Data ColumnIndex="0" RowIndex="73">Store</Data>
+            <Data ColumnIndex="1" RowIndex="73">1865</Data>
+            <Data ColumnIndex="0" RowIndex="74">Catalog</Data>
+            <Data ColumnIndex="1" RowIndex="74">8140</Data>
+            <Data ColumnIndex="0" RowIndex="75">Store</Data>
+            <Data ColumnIndex="1" RowIndex="75">529</Data>
+            <Data ColumnIndex="0" RowIndex="76">Store</Data>
+            <Data ColumnIndex="1" RowIndex="76">3954</Data>
+            <Data ColumnIndex="0" RowIndex="77">Online</Data>
+            <Data ColumnIndex="1" RowIndex="77">6140</Data>
+            <Data ColumnIndex="0" RowIndex="78">Store</Data>
+            <Data ColumnIndex="1" RowIndex="78">8973</Data>
+            <Data ColumnIndex="0" RowIndex="79">Online</Data>
+            <Data ColumnIndex="1" RowIndex="79">5675</Data>
+            <Data ColumnIndex="0" RowIndex="80">Online</Data>
+            <Data ColumnIndex="1" RowIndex="80">6262</Data>
+            <Data ColumnIndex="0" RowIndex="81">Reseller</Data>
+            <Data ColumnIndex="1" RowIndex="81">8702</Data>
+            <Data ColumnIndex="0" RowIndex="82">Online</Data>
+            <Data ColumnIndex="1" RowIndex="82">9218</Data>
+            <Data ColumnIndex="0" RowIndex="83">Store</Data>
+            <Data ColumnIndex="1" RowIndex="83">4161</Data>
+            <Data ColumnIndex="0" RowIndex="84">Store</Data>
+            <Data ColumnIndex="1" RowIndex="84">7305</Data>
+            <Data ColumnIndex="0" RowIndex="85">Reseller</Data>
+            <Data ColumnIndex="1" RowIndex="85">3758</Data>
+            <Data ColumnIndex="0" RowIndex="86">Store</Data>
+            <Data ColumnIndex="1" RowIndex="86">109</Data>
+            <Data ColumnIndex="0" RowIndex="87">Store</Data>
+            <Data ColumnIndex="1" RowIndex="87">9501</Data>
+            <Data ColumnIndex="0" RowIndex="88">Store</Data>
+            <Data ColumnIndex="1" RowIndex="88">4253</Data>
+            <Data ColumnIndex="0" RowIndex="89">Online</Data>
+            <Data ColumnIndex="1" RowIndex="89">2970</Data>
+            <Data ColumnIndex="0" RowIndex="90">Online</Data>
+            <Data ColumnIndex="1" RowIndex="90">7626</Data>
+            <Data ColumnIndex="0" RowIndex="91">Catalog</Data>
+            <Data ColumnIndex="1" RowIndex="91">7963</Data>
+            <Data ColumnIndex="0" RowIndex="92">Online</Data>
+            <Data ColumnIndex="1" RowIndex="92">1104</Data>
+            <Data ColumnIndex="0" RowIndex="93">Store</Data>
+            <Data ColumnIndex="1" RowIndex="93">1750</Data>
+            <Data ColumnIndex="0" RowIndex="94">Online</Data>
+            <Data ColumnIndex="1" RowIndex="94">3231</Data>
+            <Data ColumnIndex="0" RowIndex="95">Catalog</Data>
+            <Data ColumnIndex="1" RowIndex="95">537</Data>
+            <Data ColumnIndex="0" RowIndex="96">Online</Data>
+            <Data ColumnIndex="1" RowIndex="96">3216</Data>
+          </DataGrid>
+        </rd:DesignerState>
+        <CommandText>&lt;Query&gt;
+  &lt;XmlData&gt;
+    &lt;Data&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;346&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Online&lt;/Site&gt;
+        &lt;Number&gt;2879&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;857&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;2389&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Reseller&lt;/Site&gt;
+        &lt;Number&gt;4958&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Catalog&lt;/Site&gt;
+        &lt;Number&gt;112&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Catalog&lt;/Site&gt;
+        &lt;Number&gt;3883&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Online&lt;/Site&gt;
+        &lt;Number&gt;6960&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;9438&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;7596&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;9944&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;2937&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Catalog&lt;/Site&gt;
+        &lt;Number&gt;7372&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;3026&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;9739&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;6638&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;7582&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;9990&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;9932&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Reseller&lt;/Site&gt;
+        &lt;Number&gt;9144&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Reseller&lt;/Site&gt;
+        &lt;Number&gt;2179&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Reseller&lt;/Site&gt;
+        &lt;Number&gt;6175&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Reseller&lt;/Site&gt;
+        &lt;Number&gt;6569&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Online&lt;/Site&gt;
+        &lt;Number&gt;903&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;3346&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;7379&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Reseller&lt;/Site&gt;
+        &lt;Number&gt;3451&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Reseller&lt;/Site&gt;
+        &lt;Number&gt;3968&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Catalog&lt;/Site&gt;
+        &lt;Number&gt;5306&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Reseller&lt;/Site&gt;
+        &lt;Number&gt;7829&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;1869&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Reseller&lt;/Site&gt;
+        &lt;Number&gt;5327&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Reseller&lt;/Site&gt;
+        &lt;Number&gt;8175&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;657&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;3950&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Catalog&lt;/Site&gt;
+        &lt;Number&gt;250&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Online&lt;/Site&gt;
+        &lt;Number&gt;7374&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;9607&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;7554&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Online&lt;/Site&gt;
+        &lt;Number&gt;3656&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;6818&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Reseller&lt;/Site&gt;
+        &lt;Number&gt;1444&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Catalog&lt;/Site&gt;
+        &lt;Number&gt;2944&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;5084&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;2086&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Catalog&lt;/Site&gt;
+        &lt;Number&gt;8148&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Reseller&lt;/Site&gt;
+        &lt;Number&gt;7895&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;5207&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Online&lt;/Site&gt;
+        &lt;Number&gt;8649&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Reseller&lt;/Site&gt;
+        &lt;Number&gt;5073&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Online&lt;/Site&gt;
+        &lt;Number&gt;7524&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Catalog&lt;/Site&gt;
+        &lt;Number&gt;3860&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Catalog&lt;/Site&gt;
+        &lt;Number&gt;1552&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;9256&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;9002&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Reseller&lt;/Site&gt;
+        &lt;Number&gt;3961&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;8802&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;3930&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;5496&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;2241&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Online&lt;/Site&gt;
+        &lt;Number&gt;9013&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;6132&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Online&lt;/Site&gt;
+        &lt;Number&gt;6935&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;1726&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Online&lt;/Site&gt;
+        &lt;Number&gt;1583&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Reseller&lt;/Site&gt;
+        &lt;Number&gt;9964&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Online&lt;/Site&gt;
+        &lt;Number&gt;2032&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;2991&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;7790&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;9521&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;3321&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;3008&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;1600&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;1865&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Catalog&lt;/Site&gt;
+        &lt;Number&gt;8140&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;529&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;3954&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Online&lt;/Site&gt;
+        &lt;Number&gt;6140&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;8973&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Online&lt;/Site&gt;
+        &lt;Number&gt;5675&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Online&lt;/Site&gt;
+        &lt;Number&gt;6262&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Reseller&lt;/Site&gt;
+        &lt;Number&gt;8702&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Online&lt;/Site&gt;
+        &lt;Number&gt;9218&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;4161&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;7305&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Reseller&lt;/Site&gt;
+        &lt;Number&gt;3758&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;109&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;9501&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;4253&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Online&lt;/Site&gt;
+        &lt;Number&gt;2970&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Online&lt;/Site&gt;
+        &lt;Number&gt;7626&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Catalog&lt;/Site&gt;
+        &lt;Number&gt;7963&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Online&lt;/Site&gt;
+        &lt;Number&gt;1104&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Store&lt;/Site&gt;
+        &lt;Number&gt;1750&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Online&lt;/Site&gt;
+        &lt;Number&gt;3231&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Catalog&lt;/Site&gt;
+        &lt;Number&gt;537&lt;/Number&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;Site&gt;Online&lt;/Site&gt;
+        &lt;Number&gt;3216&lt;/Number&gt;
+      &lt;/Row&gt;
+    &lt;/Data&gt;
+  &lt;/XmlData&gt;
+  &lt;ElementPath&gt;Data{}/Row{Site(String),Number(String)}&lt;/ElementPath&gt;
+&lt;/Query&gt;</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Site">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Site</DataField>
+        </Field>
+        <Field Name="Number">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Number</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Rectangle Name="Rectangle1">
+            <ReportItems>
+              <Textbox Name="Textbox1">
+                <rd:DefaultName>Textbox1</rd:DefaultName>
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Label>Certification title</Label>
+                        <Value>Advanced Calculations</Value>
+                        <Style>
+                          <FontStyle>Normal</FontStyle>
+                          <FontSize>22pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>0.00693in</Top>
+                <Left>1.04247in</Left>
+                <Height>0.45834in</Height>
+                <Width>3.59725in</Width>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <VerticalAlign>Middle</VerticalAlign>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox137">
+                <rd:DefaultName>Textbox137</rd:DefaultName>
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Metrics BI</Value>
+                        <Style>
+                          <FontSize>14pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <Top>0.00693in</Top>
+                <Height>0.45834in</Height>
+                <Width>1.08333in</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>Orange</BackgroundColor>
+                  <VerticalAlign>Middle</VerticalAlign>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+            <Height>0.46527in</Height>
+            <Width>10.18055in</Width>
+            <Bookmark>H1</Bookmark>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Rectangle>
+          <Tablix Name="Tablix3">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>1.00231in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.00231in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.00231in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.28472in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox21">
+                          <rd:DefaultName>Textbox21</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Brand Name</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>LimeGreen</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox23">
+                          <rd:DefaultName>Textbox23</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Amount</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>LimeGreen</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox25">
+                          <rd:DefaultName>Textbox25</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Total Amount</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>LimeGreen</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox51">
+                          <rd:DefaultName>Textbox51</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Fabrikam</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>LimeGreen</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox30">
+                          <rd:DefaultName>Textbox30</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Percentage</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>LimeGreen</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.28472in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="BrandName">
+                          <rd:DefaultName>BrandName</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!BrandName.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Amount">
+                          <rd:DefaultName>Amount</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Amount.Value)</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TotalAmount">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=SUM(Fields!Amount.Value,"Sales")</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox5">
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=iif(Fields!BrandName.Value="Fabrikam",sum(Fields!Amount.Value),0)</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox3">
+                          <rd:DefaultName>Textbox3</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=ReportItems!Amount.value / ReportItems!TotalAmount.Value</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <Format>0%</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox27">
+                          <rd:DefaultName>Textbox27</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Amount1">
+                          <rd:DefaultName>Amount1</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Amount.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox29">
+                          <rd:DefaultName>Textbox29</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox53">
+                          <rd:DefaultName>Textbox53</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox32">
+                          <rd:DefaultName>Textbox32</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="Details">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!BrandName.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                </TablixMember>
+                <TablixMember>
+                  <KeepWithGroup>Before</KeepWithGroup>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>Sales</DataSetName>
+            <Top>0.64111in</Top>
+            <Left>0.33556in</Left>
+            <Height>0.81944in</Height>
+            <Width>5.00693in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Tablix Name="Tablix4">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>0.66435in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.27083in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox33">
+                          <rd:DefaultName>Textbox33</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Site</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>SlateBlue</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox39">
+                          <rd:DefaultName>Textbox39</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Min</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>SlateBlue</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox41">
+                          <rd:DefaultName>Textbox41</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Max</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>SlateBlue</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox43">
+                          <rd:DefaultName>Textbox43</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Median</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>SlateBlue</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.22222in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Site">
+                          <rd:DefaultName>Site</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Site.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox40">
+                          <rd:DefaultName>Textbox40</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Min(Fields!Number.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox42">
+                          <rd:DefaultName>Textbox42</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Max(Fields!Number.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox4">
+                          <rd:DefaultName>Textbox4</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Code.Median(Lookupset(Fields!Site.Value,Fields!Site.Value,Fields!Number.Value,"Median"))</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="Details1">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Site.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>Median</DataSetName>
+            <SortExpressions>
+              <SortExpression>
+                <Value>=Fields!Number.Value</Value>
+              </SortExpression>
+            </SortExpressions>
+            <Top>0.655in</Top>
+            <Left>6.23833in</Left>
+            <Height>0.49305in</Height>
+            <Width>3.66435in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Tablix Name="Tablix5">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>1.00231in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.00231in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.00231in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.28472in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox22">
+                          <rd:DefaultName>Textbox21</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Brand Name</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox24">
+                          <rd:DefaultName>Textbox23</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Amount</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox26">
+                          <rd:DefaultName>Textbox25</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Total Amount</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Orange</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.28472in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="BrandName2">
+                          <rd:DefaultName>BrandName</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!BrandName.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Amount2">
+                          <rd:DefaultName>Amount</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Amount.Value)</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox50">
+                          <rd:DefaultName>Textbox50</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=sum(Fields!Amount.Value,"ColorName")</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox45">
+                          <rd:DefaultName>Textbox45</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Amount4">
+                          <rd:DefaultName>Amount4</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Amount.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox47">
+                          <rd:DefaultName>Textbox47</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox28">
+                          <rd:DefaultName>Textbox27</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Amount3">
+                          <rd:DefaultName>Amount1</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Amount.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox34">
+                          <rd:DefaultName>Textbox29</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>1in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox36">
+                        <rd:DefaultName>Textbox36</rd:DefaultName>
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Color Name</Value>
+                                <Style>
+                                  <FontWeight>Bold</FontWeight>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>Orange</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember />
+                  </TablixMembers>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="ColorName">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!ColorName.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!ColorName.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>1in</Size>
+                    <CellContents>
+                      <Textbox Name="ColorName">
+                        <rd:DefaultName>ColorName</rd:DefaultName>
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!ColorName.Value</Value>
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <Group Name="Details2">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!BrandName.Value</GroupExpression>
+                        </GroupExpressions>
+                      </Group>
+                    </TablixMember>
+                    <TablixMember>
+                      <KeepWithGroup>Before</KeepWithGroup>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>1in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox38">
+                        <rd:DefaultName>Textbox38</rd:DefaultName>
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value />
+                                <Style>
+                                  <FontFamily>Arial</FontFamily>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember />
+                  </TablixMembers>
+                  <KeepWithGroup>Before</KeepWithGroup>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>Sales</DataSetName>
+            <Top>1.68277in</Top>
+            <Left>0.33556in</Left>
+            <Height>1.06944in</Height>
+            <Width>4.00693in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+        </ReportItems>
+        <Height>2.75221in</Height>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Body>
+      <Width>10.18944in</Width>
+      <Page>
+        <PageFooter>
+          <Height>0.45in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <TopMargin>1in</TopMargin>
+        <BottomMargin>1in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <Code>Dim values As New System.Collections.Generic.List(Of Integer)
+Dim valueCounts As New System.Collections.Generic.Dictionary(Of Integer, Integer)
+
+Function AddValue(newValue As Integer) As Integer
+    values.Add(newValue)
+    AddValue = newValue
+    If Not valueCounts.ContainsKey(newValue) Then
+        valueCounts.item(newValue) = 1
+    Else
+        valueCounts.item(newValue) += 1
+    End If
+End Function
+
+Public Shared Function Median(ByVal items As Object()) As Decimal
+    If items Is Nothing Then
+        Return Nothing
+    End If
+
+    Dim counter As Integer = items.Length
+    If counter = 0 Then
+        Return 0
+    End If
+
+    System.Array.Sort(items)
+
+    If counter Mod 2 = 1 Then
+        Return items(CInt((counter / 2) - 0.5))
+    Else
+        Dim FirstIndex As Integer = counter \ 2
+        Dim SecondIndex As Integer = FirstIndex - 1
+
+        Dim FirstValue As Integer = items(FirstIndex)
+        Dim SecondValue As Integer = items(SecondIndex)
+
+        Return (FirstValue + SecondValue) / 2
+    End If
+End Function
+
+</Code>
+</Report>
