@@ -13,6 +13,40 @@
     return $authResult
 }
 
+function mail ($To,$Subject,$Body) {
+
+ $SendMailHash = @{
+                'From' = $From   
+                'To' = $To
+                'Subject' = $Subject
+                'Priority' = 'Normal'
+                'smtpServer' = $SMTPServer
+                'BodyAsHTML' = $true
+            }
+ 
+         $SendMailHash.Body = $Body
+         $SendMailHash.Credential = $cred
+ $mail_count = 1
+ do {
+      try {   
+            send-mailmessage @SendMailHash -ErrorAction Stop
+            Write-Host("Email sent successfully")
+            #WriteLog ("Email sent successfully")
+            break
+           }
+      catch [System.Exception] {
+           $mail_count++
+           #$err_val = $($Error[0])
+           $err_val = $_.Exception.Message
+           Write-Host("Failed to send message Trial:{0} Error:{1} " -f $mail_count, $err_val)
+           if ($mail_count -eq 3)   {
+                    Write-Host("Error: Max trails {0}  reached, Failed to send Email : Error:{1}" -f $mail_count, $err_val)
+                    #WriteLog ("Error: Max trails {0}  reached, Failed to send Email : Error:{1}" -f $mail_count, $err_val)
+                    }
+             }
+   }until ($mail_count -eq 3)
+
+}
 
 function mailwithattachment ($To,$Subject,$Body,$Attachment) {
 
