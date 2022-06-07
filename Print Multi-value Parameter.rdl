@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report MustUnderstand="df" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily">
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>103b16ac-38c6-4e4e-8049-84e469820f0a</rd:ReportID>
+  <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="Manual">
+      <rd:SecurityType>Integrated</rd:SecurityType>
+      <ConnectionProperties>
+        <DataProvider>ENTERDATA</DataProvider>
+        <ConnectString />
+        <IntegratedSecurity>true</IntegratedSecurity>
+      </ConnectionProperties>
+      <rd:DataSourceID>1b5e62db-924c-46d9-9507-df2d36c1be2d</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DS_Category">
+      <Query>
+        <DataSourceName>Manual</DataSourceName>
+        <rd:DesignerState>
+          <DataGrid xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="">
+  <RowNumber>8</RowNumber>
+  <ColumnNumber>3</ColumnNumber>
+  <ColumnName ColumnIndex="0" ColumnWidth="63" DataType="String">ID</ColumnName>
+  <ColumnName ColumnIndex="1" ColumnWidth="100" DataType="String">Category</ColumnName>
+  <ColumnName ColumnIndex="2" ColumnWidth="100" DataType="String">Value</ColumnName>
+  <Data ColumnIndex="0" RowIndex="0">1</Data>
+  <Data ColumnIndex="1" RowIndex="0">A</Data>
+  <Data ColumnIndex="2" RowIndex="0">100</Data>
+  <Data ColumnIndex="0" RowIndex="1">2</Data>
+  <Data ColumnIndex="1" RowIndex="1">B</Data>
+  <Data ColumnIndex="2" RowIndex="1">10</Data>
+  <Data ColumnIndex="0" RowIndex="2">3</Data>
+  <Data ColumnIndex="1" RowIndex="2">C</Data>
+  <Data ColumnIndex="2" RowIndex="2">200</Data>
+  <Data ColumnIndex="0" RowIndex="3">4</Data>
+  <Data ColumnIndex="1" RowIndex="3">D</Data>
+  <Data ColumnIndex="2" RowIndex="3">300</Data>
+  <Data ColumnIndex="0" RowIndex="4">5</Data>
+  <Data ColumnIndex="1" RowIndex="4">E</Data>
+  <Data ColumnIndex="2" RowIndex="4">400</Data>
+  <Data ColumnIndex="0" RowIndex="5">6</Data>
+  <Data ColumnIndex="1" RowIndex="5">F</Data>
+  <Data ColumnIndex="2" RowIndex="5">500</Data>
+  <Data ColumnIndex="0" RowIndex="6">7</Data>
+  <Data ColumnIndex="1" RowIndex="6">G</Data>
+  <Data ColumnIndex="2" RowIndex="6">700</Data>
+  <Data ColumnIndex="0" RowIndex="7">8</Data>
+  <Data ColumnIndex="1" RowIndex="7">H</Data>
+  <Data ColumnIndex="2" RowIndex="7">800</Data>
+</DataGrid>
+        </rd:DesignerState>
+        <CommandText>&lt;Query&gt;
+  &lt;XmlData&gt;
+    &lt;Data&gt;
+      &lt;Row&gt;
+        &lt;ID&gt;1&lt;/ID&gt;
+        &lt;Category&gt;A&lt;/Category&gt;
+        &lt;Value&gt;100&lt;/Value&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;ID&gt;2&lt;/ID&gt;
+        &lt;Category&gt;B&lt;/Category&gt;
+        &lt;Value&gt;10&lt;/Value&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;ID&gt;3&lt;/ID&gt;
+        &lt;Category&gt;C&lt;/Category&gt;
+        &lt;Value&gt;200&lt;/Value&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;ID&gt;4&lt;/ID&gt;
+        &lt;Category&gt;D&lt;/Category&gt;
+        &lt;Value&gt;300&lt;/Value&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;ID&gt;5&lt;/ID&gt;
+        &lt;Category&gt;E&lt;/Category&gt;
+        &lt;Value&gt;400&lt;/Value&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;ID&gt;6&lt;/ID&gt;
+        &lt;Category&gt;F&lt;/Category&gt;
+        &lt;Value&gt;500&lt;/Value&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;ID&gt;7&lt;/ID&gt;
+        &lt;Category&gt;G&lt;/Category&gt;
+        &lt;Value&gt;700&lt;/Value&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;ID&gt;8&lt;/ID&gt;
+        &lt;Category&gt;H&lt;/Category&gt;
+        &lt;Value&gt;800&lt;/Value&gt;
+      &lt;/Row&gt;
+    &lt;/Data&gt;
+  &lt;/XmlData&gt;
+  &lt;ElementPath&gt;Data{}/Row{ID(String),Category(String),Value(String)}&lt;/ElementPath&gt;
+&lt;/Query&gt;</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ID">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ID</DataField>
+        </Field>
+        <Field Name="Category">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Category</DataField>
+        </Field>
+        <Field Name="Value">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Value</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="Tablix1">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>1.9375in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.27778in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox9">
+                          <rd:DefaultName>Textbox9</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Selected Parameter Values</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.27778in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox10">
+                          <rd:DefaultName>Textbox10</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Parameters!Category.Value(RowNumber(Nothing)-1)</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="Details" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DS_Category</DataSetName>
+            <Filters>
+              <Filter>
+                <FilterExpression>=Fields!ID.Value</FilterExpression>
+                <Operator>TopN</Operator>
+                <FilterValues>
+                  <FilterValue>=Parameters!Category.Count</FilterValue>
+                </FilterValues>
+              </Filter>
+            </Filters>
+            <Top>0.2175in</Top>
+            <Left>0.30778in</Left>
+            <Height>0.55556in</Height>
+            <Width>1.9375in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+        </ReportItems>
+        <Height>2.25in</Height>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Body>
+      <Width>7.32324in</Width>
+      <Page>
+        <PageFooter>
+          <Height>0.45in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="ExecutionTime">
+              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Globals!ExecutionTime</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>0.2in</Top>
+              <Left>4in</Left>
+              <Height>0.25in</Height>
+              <Width>2in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <TopMargin>1in</TopMargin>
+        <BottomMargin>1in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="Category">
+      <DataType>String</DataType>
+      <Prompt>Sample</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DS_Category</DataSetName>
+          <ValueField>Category</ValueField>
+          <LabelField>Category</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+      <cl:ComponentMetadata>
+        <cl:HideUpdateNotifications>true</cl:HideUpdateNotifications>
+      </cl:ComponentMetadata>
+    </ReportParameter>
+  </ReportParameters>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Category</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+</Report>
