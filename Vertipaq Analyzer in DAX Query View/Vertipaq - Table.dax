@@ -1,0 +1,121 @@
+//Author - Hariharan Rajendran
+//Name - VertiPaq Analyser Metrics - Relationship View in DAX Query View
+//Version - 1.0
+//Contact - https://www.linkedin.com/in/imhariharanr/
+
+DEFINE
+	//Get the table and the cardinality
+	VAR _TableCardinality = GROUPBY(
+		FILTER(
+			INFO.STORAGETABLES(),
+			RIGHT(
+				LEFT(
+					[TABLE_ID],
+					2
+				),
+				1
+			) <> "$"
+		),
+		[DIMENSION_NAME],
+		"Cardinality",
+		SUMX(
+			CURRENTGROUP(),
+			[ROWS_COUNT]
+		),
+		"RI Violations",
+		SUMX(
+			CURRENTGROUP(),
+			[RIVIOLATION_COUNT]
+		)
+	)
+
+	VAR _DataSize = GROUPBY(
+		FILTER(
+			INFO.STORAGETABLECOLUMNSEGMENTS(),
+			RIGHT(
+				LEFT(
+					[TABLE_ID],
+					2
+				),
+				1
+			) <> "$"
+		),
+		[DIMENSION_NAME],
+		"DataSize",
+		SUMX(
+			CURRENTGROUP(),
+			[USED_SIZE]
+		)
+	)
+
+	VAR _HierSize = GROUPBY(
+		FILTER(
+			INFO.STORAGETABLECOLUMNSEGMENTS(),
+			LEFT(
+				[TABLE_ID],
+				2
+			) = "H$" && [SEGMENT_NUMBER] = 0
+		),
+		[DIMENSION_NAME],
+		"HierSize",
+		SUMX(
+			CURRENTGROUP(),
+			[USED_SIZE]
+		)
+	)
+
+	VAR _DicSize = GROUPBY(
+		FILTER(
+			INFO.STORAGETABLECOLUMNS(),
+			[COLUMN_TYPE] = "BASIC_DATA"
+		),
+		[DIMENSION_NAME],
+		"DicSize",
+		SUMX(
+			CURRENTGROUP(),
+			[DICTIONARY_SIZE]
+		)
+	)
+	VAR _Table =
+	 SELECTCOLUMNS(
+		NATURALINNERJOIN(
+			ADDCOLUMNS(
+				NATURALINNERJOIN(
+					NATURALINNERJOIN(
+						_DataSize,
+						_HierSize
+					),
+					_DicSize
+				),
+				"Total Size", [DataSize] + [DicSize] + [HierSize]
+			),
+			_TableCardinality
+		),
+		"Table Name",
+		[DIMENSION_NAME],
+		"Cardinality",
+		[Cardinality],
+		"Total Size",
+		[Total Size],
+		"Data",
+		[DataSize],
+		"Dictionary",
+		[DicSize],
+		"Hier Size",
+		[HierSize],
+		"RI Violations",
+		[RI Violations]
+	)
+
+EVALUATE
+	ADDCOLUMNS(
+		_Table,
+		"DB%", FORMAT(
+			[Total Size] / SUMX(
+				_Table,
+				[Total Size]
+			),
+			"0.00%"
+		)
+	)
+	ORDER BY [Cardinality] DESC

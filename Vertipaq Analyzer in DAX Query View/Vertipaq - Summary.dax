@@ -1,0 +1,110 @@
+//Author - Hariharan Rajendran
+//Name - VertiPaq Analyser Metrics - Summary View in DAX Query View
+//Version - 1.0
+//Contact - https://www.linkedin.com/in/imhariharanr/
+
+DEFINE
+	//Get the table and the cardinality
+	VAR _TableCardinality = GROUPBY(
+		FILTER(
+			INFO.STORAGETABLES(),
+			RIGHT(
+				LEFT(
+					[TABLE_ID],
+					2
+				),
+				1
+			//exclude the columns
+			) <> "$"
+		),
+		[DIMENSION_NAME],
+		"Cardinality",
+		SUMX(
+			CURRENTGROUP(),
+			[ROWS_COUNT]
+		),
+		"RIViolocation",
+		SUMX(CURRENTGROUP(),[RIVIOLATION_COUNT])
+	)
+	//Get the data size for each table
+	VAR _DataSize = GROUPBY(
+		FILTER(
+			INFO.STORAGETABLECOLUMNSEGMENTS(),
+			RIGHT(
+				LEFT(
+					[TABLE_ID],
+					2
+				),
+				1
+			//exclude the columns
+			) <> "$"
+		),
+		[DIMENSION_NAME],
+		"DataSize",
+		SUMX(
+			CURRENTGROUP(),
+			[USED_SIZE]
+		)
+	)
+	//Get the hierarchy size of each table
+	VAR _HierSize = GROUPBY(
+		FILTER(
+			INFO.STORAGETABLECOLUMNSEGMENTS(),
+			LEFT(
+				[TABLE_ID],
+				2
+			) = "H$" && [SEGMENT_NUMBER] = 0
+		),
+		[DIMENSION_NAME],
+		"HierSize",
+		SUMX(
+			CURRENTGROUP(),
+			[USED_SIZE]
+		)
+	)
+	//Get dictionary size of each table
+	VAR _DicSize = GROUPBY(
+		FILTER(
+			INFO.STORAGETABLECOLUMNS(),
+			[COLUMN_TYPE] = "BASIC_DATA"
+		),
+		[DIMENSION_NAME],
+		"DicSize",
+		SUMX(
+			CURRENTGROUP(),
+			[DICTIONARY_SIZE]
+		)
+	)
+	VAR _Table =
+	 SELECTCOLUMNS(
+		NATURALINNERJOIN(
+			ADDCOLUMNS(
+				NATURALINNERJOIN(
+					NATURALINNERJOIN(
+						_DataSize,
+						_HierSize
+					),
+					_DicSize
+				),
+				"Total Size", [DataSize] + [DicSize] + [HierSize]
+			),
+			_TableCardinality
+		),
+		"Table Name",
+		[DIMENSION_NAME],
+		"Cardinality",
+		[Cardinality],
+		"Total Size",
+		[Total Size],
+		"Data",
+		[DataSize],
+		"Dictionary",
+		[DicSize],
+		"Hier Size",
+		[HierSize],
+		"RIViolation",
+		[RIViolocation]
+	)
+
+EVALUATE
+	SUMMARIZE(_Table,"Size in MB",SUMX(_Table,[Total Size])/1024/1024)

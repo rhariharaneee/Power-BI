@@ -1,0 +1,251 @@
+//Author - Hariharan Rajendran
+//Name - VertiPaq Analyser Metrics - Relationship View in DAX Query View
+//Version - 1.0
+//Contact - https://www.linkedin.com/in/imhariharanr/
+
+DEFINE
+	VAR _Column =
+	 SELECTCOLUMNS(
+		FILTER(
+			INFO.STORAGETABLECOLUMNS(),
+			[COLUMN_TYPE] = "BASIC_DATA"
+		),
+		"Table Name",
+		[DIMENSION_NAME],
+		"Column Name",
+		[ATTRIBUTE_NAME],
+		"Data Type",
+		SWITCH(
+			[DATATYPE],
+			"DBTYPE_I8", "Int64",
+			"DBTYPE_WSTR", "String",
+			"DBTYPE_CY", "Decimal",
+			"DBTYPE_BOOL", "Boolean",
+			"DBTYPE_DATE", "DateTime",
+			"DBTYPE_R8", "Double",
+			[DATATYPE]
+		),
+		"Dictionary Size",
+		[DICTIONARY_SIZE],
+		"Column Encoding",
+		SWITCH(
+			[COLUMN_ENCODING],
+			1, "HASH",
+			2, "VALUE"
+		)
+	)
+
+	VAR _DataSize =
+	 SELECTCOLUMNS(
+		FILTER(
+			INFO.STORAGETABLECOLUMNSEGMENTS(),
+			RIGHT(
+				LEFT(
+					[TABLE_ID],
+					2
+				),
+				1
+			//exclude the columns
+			) <> "$"
+		),
+		"Table Name",
+		[DIMENSION_NAME],
+		"Data Size",
+		[USED_SIZE],
+		"Column Name",
+		SUBSTITUTE(
+			LEFT(
+				[COLUMN_ID],
+				SEARCH(
+					" (",
+					[COLUMN_ID],
+					1,
+					LEN([COLUMN_ID]) - 1
+				) - 1
+			),
+			"RowNumber ",
+			"RowNumber-"
+		)
+	)
+
+	VAR _HierSize =
+	 SELECTCOLUMNS(
+		GROUPBY(
+			FILTER(
+				INFO.STORAGETABLECOLUMNSEGMENTS(),
+				LEFT(
+					[TABLE_ID],
+					2
+				) = "H$" && [SEGMENT_NUMBER] = 0
+			),
+			[DIMENSION_NAME],
+			[TABLE_ID],
+			"HierSize",
+			SUMX(
+				CURRENTGROUP(),
+				[USED_SIZE]
+			)
+		),
+		"Table Name",
+		[DIMENSION_NAME],
+		"HierSize",
+		[HierSize],
+		"Column Name",
+		VAR _1 = FIND(
+			"$",
+			[TABLE_ID],
+			1
+		)
+		VAR _2 = FIND(
+			"$",
+			[TABLE_ID],
+			_1 + 1
+		)
+		VAR _len = LEN([TABLE_ID])
+		VAR _stage1 = MID(
+			[TABLE_ID],
+			_2 + 1,
+			_len - _2 + 1
+		)
+		VAR _final = LEFT(
+			_stage1,
+			SEARCH(
+				" (",
+				_stage1,
+				1,
+				LEN(_stage1) - 1
+			) - 1
+		)
+		RETURN
+			_final
+	)
+
+	VAR _TableCardinality = SELECTCOLUMNS(
+		GROUPBY(
+			FILTER(
+				INFO.STORAGETABLES(),
+				RIGHT(
+					LEFT(
+						[TABLE_ID],
+						2
+					),
+					1
+				//exclude the columns
+				) <> "$"
+			),
+			[DIMENSION_NAME],
+			"Cardinality",
+			SUMX(
+				CURRENTGROUP(),
+				[ROWS_COUNT]
+			)
+		),
+		"Table Name",
+		[DIMENSION_NAME],
+		"Rows",
+		[Cardinality]
+	)
+
+
+	VAR _ColumnCardinality =
+	 SELECTCOLUMNS(
+		FILTER(
+			INFO.STORAGETABLES(),
+			LEFT(
+				[TABLE_ID],
+				2
+			) = "H$"
+		),
+		"Table Name",
+		[DIMENSION_NAME],
+		"Column Name",
+		VAR _1 = FIND(
+			"$",
+			[TABLE_ID],
+			1
+		)
+		VAR _2 = FIND(
+			"$",
+			[TABLE_ID],
+			_1 + 1
+		)
+		VAR _len = LEN([TABLE_ID])
+		VAR _stage1 = MID(
+			[TABLE_ID],
+			_2 + 1,
+			_len - _2 + 1
+		)
+		VAR _final = LEFT(
+			_stage1,
+			SEARCH(
+				" (",
+				_stage1,
+				1,
+				LEN(_stage1) - 1
+			) - 1
+		)
+		RETURN
+			_final,
+		"Column Cardinality",
+		[ROWS_COUNT] - 3
+	)
+
+
+	VAR _Final =
+	 ADDCOLUMNS(
+		ADDCOLUMNS(
+			NATURALLEFTOUTERJOIN(
+				NATURALLEFTOUTERJOIN(
+					NATURALLEFTOUTERJOIN(
+						NATURALLEFTOUTERJOIN(
+							_Column,
+							_DataSize
+						),
+						_HierSize
+					),
+					_TableCardinality
+				),
+				_ColumnCardinality
+			),
+			"New Data Size", IF(
+				ISBLANK([Data Size]) && CONTAINSSTRING(
+					[Column Name],
+					"RowNumber"
+				),
+				[Dictionary Size],
+				[Data Size]
+			)
+		),
+		"Col Size", [New Data Size] + [HierSize] + [Dictionary Size]
+	)
+
+EVALUATE
+	SELECTCOLUMNS(
+		_Final,
+		"Table Name",
+		[Table Name],
+		"Column Name",
+		[Column Name],
+		"Rows",
+		[Rows],
+		"Cardinality",
+		[Column Cardinality] + 0,
+		"Col Size",
+		[Col Size],
+		"Data",
+		[New Data Size],
+		"Dictionary",
+		[Dictionary Size],
+		"Hier Size",
+		[HierSize] + 0,
+		"Encoding",
+		[Column Encoding],
+		"Data Type",
+		[Data Type],
+		"% DB",
+		([Col Size] / SUMX(
+			_Final,
+			[Col Size]
+		) * 100)
+	)
+	ORDER BY [Col Size] DESC

@@ -1,0 +1,256 @@
+//Author - Hariharan Rajendran
+//Name - VertiPaq Analyser Metrics - Relationship View in DAX Query View
+//Version - 1.0
+//Contact - https://www.linkedin.com/in/imhariharanr/
+
+DEFINE
+	VAR _RelationshipSize =
+	 SELECTCOLUMNS(
+		FILTER(
+			INFO.STORAGETABLECOLUMNSEGMENTS(),
+			LEFT(
+				[TABLE_ID],
+				2
+			) = "R$"
+		),
+		"Table Name",
+		[DIMENSION_NAME],
+		"Used Size",
+		[USED_SIZE],
+		"Relationship ID",
+		VAR _1 = FIND(
+			"(",
+			[TABLE_ID],
+			1
+		)
+		VAR _2 = FIND(
+			"(",
+			[TABLE_ID],
+			_1 + 1
+		)
+		RETURN
+			SUBSTITUTE(
+				MID(
+					[TABLE_ID],
+					_2 + 1,
+					_2
+				),
+				")",
+				""
+			)
+	)
+	VAR _FromColumnCardinality =
+	 SELECTCOLUMNS(
+		FILTER(
+			INFO.STORAGETABLES(),
+			LEFT(
+				[TABLE_ID],
+				2
+			) = "H$"
+		),
+		"From Column ID",
+		VAR _1 = FIND(
+			"(",
+			[TABLE_ID],
+			1
+		)
+		VAR _2 = FIND(
+			"(",
+			[TABLE_ID],
+			_1 + 1
+		)
+		RETURN
+			SUBSTITUTE(
+				MID(
+					[TABLE_ID],
+					_2 + 1,
+					_2
+				),
+				")",
+				""
+			),
+		"From Column Cardinality",
+		[ROWS_COUNT] - 3
+	)
+
+	VAR _ToColumnCardinality =
+	 SELECTCOLUMNS(
+		FILTER(
+			INFO.STORAGETABLES(),
+			LEFT(
+				[TABLE_ID],
+				2
+			) = "H$"
+		),
+		"To Column ID",
+		VAR _1 = FIND(
+			"(",
+			[TABLE_ID],
+			1
+		)
+		VAR _2 = FIND(
+			"(",
+			[TABLE_ID],
+			_1 + 1
+		)
+		RETURN
+			SUBSTITUTE(
+				MID(
+					[TABLE_ID],
+					_2 + 1,
+					_2
+				),
+				")",
+				""
+			),
+		"To Column Cardinality",
+		[ROWS_COUNT] - 3
+	)
+
+
+	VAR _Relationship =
+	 SELECTCOLUMNS(
+		INFO.RELATIONSHIPS(),
+		"Relationship ID",
+		FORMAT(
+			[ID],
+			"###"
+		),
+		"From Table ID",
+		[FromTableID],
+		"From Column ID",
+		FORMAT(
+			[FromColumnID],
+			"####"
+		),
+		"To Table ID",
+		[ToTableID],
+		"To Column ID",
+		FORMAT(
+			[ToColumnID],
+			"###"
+		),
+		"Cross Filter Behavior From",
+		SWITCH(
+			[CrossFilteringBehavior],
+			1, "One",
+			2, "Both",
+			"Something else"
+		),
+		"From Cardinality",
+		SWITCH(
+			[FromCardinality],
+			1, "One",
+			2, "Many",
+			"Something else"
+		),
+		"Cross Filter Behavior (To)",
+		SWITCH(
+			[CrossFilteringBehavior],
+			1, "One",
+			2, "Both",
+			"Something else"
+		),
+		"To Cardinality",
+		SWITCH(
+			[ToCardinality],
+			1, "One",
+			2, "Many",
+			"Something else"
+		)
+	)
+
+	VAR _FrpmTable =
+	 SELECTCOLUMNS(
+		INFO.TABLES(),
+		"From Table ID",
+		[ID],
+		"From TableName",
+		[Name]
+	)
+	VAR _ToTable =
+	 SELECTCOLUMNS(
+		INFO.TABLES(),
+		"To Table ID",
+		[ID],
+		"To TableName",
+		[Name]
+	)
+	VAR _FromCol =
+	 SELECTCOLUMNS(
+		INFO.COLUMNS(),
+		"From Column ID",
+		FORMAT(
+			[ID],
+			"####"
+		),
+		"From ColumnName",
+		IF(
+			ISBLANK([ExplicitName]),
+			[InferredName],
+			[ExplicitName]
+		)
+	)
+	VAR _ToCol =
+	 SELECTCOLUMNS(
+		INFO.COLUMNS(),
+		"To Column ID",
+		FORMAT(
+			[ID],
+			"####"
+		),
+		"To ColumnName",
+		IF(
+			ISBLANK([ExplicitName]),
+			[InferredName],
+			[ExplicitName]
+		)
+	)
+
+
+EVALUATE
+	SELECTCOLUMNS(
+		NATURALLEFTOUTERJOIN(
+			NATURALLEFTOUTERJOIN(
+				NATURALLEFTOUTERJOIN(
+					NATURALINNERJOIN(
+						NATURALLEFTOUTERJOIN(
+							_RelationshipSize,
+							NATURALLEFTOUTERJOIN(
+								NATURALLEFTOUTERJOIN(
+									_Relationship,
+									_FromColumnCardinality
+								),
+								_ToColumnCardinality
+							)
+						),
+						_FrpmTable
+					),
+					_ToTable
+				),
+				_FromCol
+			),
+			_ToCol
+		),
+		"From Table Name",
+		[From TableName],
+		"From Column Name",
+		[From ColumnName],
+		"To Table Name",
+		[To TableName],
+		"To Column Name",
+		[To ColumnName],
+		"From",
+		[From Cardinality],
+		"To",
+		[To Cardinality],
+		"Cross Filter Behaviour (From]",
+		[Cross Filter Behavior From],
+		"Size",
+		[Used Size],
+		"Max from Cardinality",
+		[From Column Cardinality],
+		"Max To Cardinality",
+		[To Column Cardinality]
+	)
+	ORDER BY [From Table Name]
