@@ -62,6 +62,44 @@ DEFINE
 			[USED_SIZE]
 		)
 	)
+	/*
+		Added by Ricardo Rincón https://www.linkedin.com/in/nexus150/
+		_UserHierSize  = to obtain the size of the user hierarchies
+	*/
+	VAR _UserHierSize = GROUPBY(
+		FILTER(
+			INFO.STORAGETABLECOLUMNSEGMENTS(),
+			LEFT(
+				[TABLE_ID],
+				2
+			) = "U$" && [SEGMENT_NUMBER] = 0
+		),
+		[DIMENSION_NAME],
+		"UserHierSize",
+		SUMX(
+			CURRENTGROUP(),
+			[USED_SIZE]
+		)
+	)	
+	/*
+		Added by Ricardo Rincón https://www.linkedin.com/in/nexus150/
+		_UserRelSize = to obtain the size of the relationships
+	*/	
+	VAR _RelSize = GROUPBY(
+		FILTER(
+			INFO.STORAGETABLECOLUMNSEGMENTS(),
+			LEFT(
+				[TABLE_ID],
+				2
+			) = "R$" && [SEGMENT_NUMBER] = 0
+		),
+		[DIMENSION_NAME],
+		"RelSize",
+		SUMX(
+			CURRENTGROUP(),
+			[USED_SIZE]
+		)
+	)
 	//Get dictionary size of each table
 	VAR _DicSize = GROUPBY(
 		FILTER(
@@ -79,14 +117,20 @@ DEFINE
 	 SELECTCOLUMNS(
 		NATURALINNERJOIN(
 			ADDCOLUMNS(
-				NATURALINNERJOIN(
-					NATURALINNERJOIN(
-						_DataSize,
-						_HierSize
+				NATURALLEFTOUTERJOIN(				
+					NATURALLEFTOUTERJOIN(
+						NATURALINNERJOIN(
+							NATURALINNERJOIN(
+								_DataSize,
+								_HierSize
+							),
+							_DicSize
+						),
+						_RelSize
 					),
-					_DicSize
-				),
-				"Total Size", [DataSize] + [DicSize] + [HierSize]
+					_UserHierSize
+				),		
+				"Total Size", [DataSize] + [DicSize] + [HierSize] + [RelSize] + [UserHierSize]
 			),
 			_TableCardinality
 		),
