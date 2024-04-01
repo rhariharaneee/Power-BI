@@ -1,5 +1,5 @@
 // Author - Hariharan Rajendran
-// Name - VertiPaq Analyzer Metrics - Table View in DAX Query View
+// Name - VertiPaq Analyser Metrics - Table View in DAX Query View
 // Version - 1.0
 // Contact - https://www.linkedin.com/in/imhariharanr/
 DEFINE
@@ -60,6 +60,44 @@ DEFINE
 			[USED_SIZE]
 		)
 	)
+	/*
+		Added by Ricardo Rincón https://www.linkedin.com/in/nexus150/
+		_UserHierSize  = to obtain the size of the user hierarchies
+	*/
+	VAR _UserHierSize = GROUPBY(
+		FILTER(
+			INFO.STORAGETABLECOLUMNSEGMENTS(),
+			LEFT(
+				[TABLE_ID],
+				2
+			) = "U$" && [SEGMENT_NUMBER] = 0
+		),
+		[DIMENSION_NAME],
+		"UserHierSize",
+		SUMX(
+			CURRENTGROUP(),
+			[USED_SIZE]
+		)
+	)
+	/*
+		Added by Ricardo Rincón https://www.linkedin.com/in/nexus150/
+		_UserRelSize = to obtain the size of the relationships
+	*/
+	VAR _RelSize = GROUPBY(
+		FILTER(
+			INFO.STORAGETABLECOLUMNSEGMENTS(),
+			LEFT(
+				[TABLE_ID],
+				2
+			) = "R$" && [SEGMENT_NUMBER] = 0
+		),
+		[DIMENSION_NAME],
+		"RelSize",
+		SUMX(
+			CURRENTGROUP(),
+			[USED_SIZE]
+		)
+	)
 	VAR _DicSize = GROUPBY(
 		FILTER(
 			INFO.STORAGETABLECOLUMNS(),
@@ -75,14 +113,20 @@ DEFINE
 	VAR _Table = SELECTCOLUMNS(
 		NATURALINNERJOIN(
 			ADDCOLUMNS(
-				NATURALINNERJOIN(
-					NATURALINNERJOIN(
-						_DataSize,
-						_HierSize
+				NATURALLEFTOUTERJOIN(
+					NATURALLEFTOUTERJOIN(
+						NATURALINNERJOIN(
+							NATURALINNERJOIN(
+								_DataSize,
+								_HierSize
+							),
+							_DicSize
+						),
+						_RelSize
 					),
-					_DicSize
+					_UserHierSize
 				),
-				"Total Size", [DataSize] + [DicSize] + [HierSize]
+				"Total Size", [DataSize] + [DicSize] + [HierSize] + [RelSize] + [UserHierSize]
 			),
 			_TableCardinality
 		),
@@ -98,6 +142,10 @@ DEFINE
 		[DicSize],
 		"Hier Size",
 		[HierSize],
+		"User Hier Size",
+		[UserHierSize],
+		"Rel Size",
+		[RelSize],
 		"RI Violations",
 		[RI Violations]
 	)
@@ -116,4 +164,4 @@ EVALUATE
 			"0.00%"
 		)
 	)
-	ORDER BY [Cardinality] DESC
+	ORDER BY [Total Size] DESC
