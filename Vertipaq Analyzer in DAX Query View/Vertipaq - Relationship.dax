@@ -239,4 +239,4 @@ EVALUATE
 		"Max To Cardinality",
 		[To Column Cardinality]
 	)
-	ORDER BY [From Table Name]
+	ORDER BY [From Table Name], [From Column Name]
