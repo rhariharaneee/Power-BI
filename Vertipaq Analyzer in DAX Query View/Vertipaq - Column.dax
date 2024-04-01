@@ -1,11 +1,9 @@
-//Author - Hariharan Rajendran
-//Name - VertiPaq Analyser Metrics - Column View in DAX Query View
-//Version - 1.0
-//Contact - https://www.linkedin.com/in/imhariharanr/
-
+// Author - Hariharan Rajendran
+// Name - VertiPaq Analyser Metrics - Columns View in DAX Query View
+// Version - 1.0
+// Contact - https://www.linkedin.com/in/imhariharanr/
 DEFINE
-	VAR _Column =
-	 SELECTCOLUMNS(
+	VAR _Column = SELECTCOLUMNS(
 		FILTER(
 			INFO.STORAGETABLECOLUMNS(),
 			[COLUMN_TYPE] = "BASIC_DATA"
@@ -34,9 +32,7 @@ DEFINE
 			2, "VALUE"
 		)
 	)
-
-	VAR _DataSize =
-	 SELECTCOLUMNS(
+	VAR _DataSize = SELECTCOLUMNS(
 		FILTER(
 			INFO.STORAGETABLECOLUMNSEGMENTS(),
 			RIGHT(
@@ -45,7 +41,7 @@ DEFINE
 					2
 				),
 				1
-			//exclude the columns
+			// Exclude the columns
 			) <> "$"
 		),
 		"Table Name",
@@ -67,9 +63,7 @@ DEFINE
 			"RowNumber-"
 		)
 	)
-
-	VAR _HierSize =
-	 SELECTCOLUMNS(
+	VAR _HierSize = SELECTCOLUMNS(
 		GROUPBY(
 			FILTER(
 				INFO.STORAGETABLECOLUMNSEGMENTS(),
@@ -117,9 +111,8 @@ DEFINE
 			) - 1
 		)
 		RETURN
-			_final
+			_Final
 	)
-
 	VAR _TableCardinality = SELECTCOLUMNS(
 		GROUPBY(
 			FILTER(
@@ -130,7 +123,7 @@ DEFINE
 						2
 					),
 					1
-				//exclude the columns
+				// Exclude the columns
 				) <> "$"
 			),
 			[DIMENSION_NAME],
@@ -145,10 +138,7 @@ DEFINE
 		"Rows",
 		[Cardinality]
 	)
-
-
-	VAR _ColumnCardinality =
-	 SELECTCOLUMNS(
+	VAR _ColumnCardinality = SELECTCOLUMNS(
 		FILTER(
 			INFO.STORAGETABLES(),
 			LEFT(
@@ -185,14 +175,11 @@ DEFINE
 			) - 1
 		)
 		RETURN
-			_final,
+			_Final,
 		"Column Cardinality",
 		[ROWS_COUNT] - 3
 	)
-
-
-	VAR _Final =
-	 ADDCOLUMNS(
+	VAR _Final = ADDCOLUMNS(
 		ADDCOLUMNS(
 			NATURALLEFTOUTERJOIN(
 				NATURALLEFTOUTERJOIN(
@@ -243,9 +230,12 @@ EVALUATE
 		"Data Type",
 		[Data Type],
 		"% DB",
-		([Col Size] / SUMX(
-			_Final,
-			[Col Size]
-		) * 100)
+		DIVIDE(
+			[Col Size],
+			SUMX(
+				_Final,
+				[Col Size]
+			)
+		) * 100
 	)
 	ORDER BY [Col Size] DESC
