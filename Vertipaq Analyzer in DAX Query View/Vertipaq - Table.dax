@@ -1,10 +1,9 @@
-//Author - Hariharan Rajendran
-//Name - VertiPaq Analyser Metrics - Table View in DAX Query View
-//Version - 1.0
-//Contact - https://www.linkedin.com/in/imhariharanr/
-
+// Author - Hariharan Rajendran
+// Name - VertiPaq Analyser Metrics - Table View in DAX Query View
+// Version - 1.0
+// Contact - https://www.linkedin.com/in/imhariharanr/
 DEFINE
-	//Get the table and the cardinality
+	// Get the table and the cardinality
 	VAR _TableCardinality = GROUPBY(
 		FILTER(
 			INFO.STORAGETABLES(),
@@ -28,7 +27,6 @@ DEFINE
 			[RIVIOLATION_COUNT]
 		)
 	)
-
 	VAR _DataSize = GROUPBY(
 		FILTER(
 			INFO.STORAGETABLECOLUMNSEGMENTS(),
@@ -47,7 +45,6 @@ DEFINE
 			[USED_SIZE]
 		)
 	)
-
 	VAR _HierSize = GROUPBY(
 		FILTER(
 			INFO.STORAGETABLECOLUMNSEGMENTS(),
@@ -81,11 +78,11 @@ DEFINE
 			CURRENTGROUP(),
 			[USED_SIZE]
 		)
-	)	
+	)
 	/*
 		Added by Ricardo Rincón https://www.linkedin.com/in/nexus150/
 		_UserRelSize = to obtain the size of the relationships
-	*/	
+	*/
 	VAR _RelSize = GROUPBY(
 		FILTER(
 			INFO.STORAGETABLECOLUMNSEGMENTS(),
@@ -101,7 +98,6 @@ DEFINE
 			[USED_SIZE]
 		)
 	)
-
 	VAR _DicSize = GROUPBY(
 		FILTER(
 			INFO.STORAGETABLECOLUMNS(),
@@ -114,11 +110,10 @@ DEFINE
 			[DICTIONARY_SIZE]
 		)
 	)
-	VAR _Table =
-	 SELECTCOLUMNS(
+	VAR _Table = SELECTCOLUMNS(
 		NATURALINNERJOIN(
 			ADDCOLUMNS(
-				NATURALLEFTOUTERJOIN(				
+				NATURALLEFTOUTERJOIN(
 					NATURALLEFTOUTERJOIN(
 						NATURALINNERJOIN(
 							NATURALINNERJOIN(
@@ -130,7 +125,7 @@ DEFINE
 						_RelSize
 					),
 					_UserHierSize
-				),		
+				),
 				"Total Size", [DataSize] + [DicSize] + [HierSize] + [RelSize] + [UserHierSize]
 			),
 			_TableCardinality
@@ -148,7 +143,7 @@ DEFINE
 		"Hier Size",
 		[HierSize],
 		"User Hier Size",
-		[UserHierSize],		
+		[UserHierSize],
 		"Rel Size",
 		[RelSize],
 		"RI Violations",
@@ -159,9 +154,12 @@ EVALUATE
 	ADDCOLUMNS(
 		_Table,
 		"DB%", FORMAT(
-			[Total Size] / SUMX(
-				_Table,
-				[Total Size]
+			DIVIDE(
+				[Total Size],
+				SUMX(
+					_Table,
+					[Total Size]
+				)
 			),
 			"0.00%"
 		)

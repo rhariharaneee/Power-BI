@@ -1,11 +1,9 @@
-//Author - Hariharan Rajendran
-//Name - VertiPaq Analyser Metrics - Relationship View in DAX Query View
-//Version - 1.0
-//Contact - https://www.linkedin.com/in/imhariharanr/
-
+// Author - Hariharan Rajendran
+// Name - VertiPaq Analyser Metrics - Relationship View in DAX Query View
+// Version - 1.0
+// Contact - https://www.linkedin.com/in/imhariharanr/
 DEFINE
-	VAR _RelationshipSize =
-	 SELECTCOLUMNS(
+	VAR _RelationshipSize = SELECTCOLUMNS(
 		FILTER(
 			INFO.STORAGETABLECOLUMNSEGMENTS(),
 			LEFT(
@@ -39,8 +37,7 @@ DEFINE
 				""
 			)
 	)
-	VAR _FromColumnCardinality =
-	 SELECTCOLUMNS(
+	VAR _FromColumnCardinality = SELECTCOLUMNS(
 		FILTER(
 			INFO.STORAGETABLES(),
 			LEFT(
@@ -72,9 +69,7 @@ DEFINE
 		"From Column Cardinality",
 		[ROWS_COUNT] - 3
 	)
-
-	VAR _ToColumnCardinality =
-	 SELECTCOLUMNS(
+	VAR _ToColumnCardinality = SELECTCOLUMNS(
 		FILTER(
 			INFO.STORAGETABLES(),
 			LEFT(
@@ -106,10 +101,7 @@ DEFINE
 		"To Column Cardinality",
 		[ROWS_COUNT] - 3
 	)
-
-
-	VAR _Relationship =
-	 SELECTCOLUMNS(
+	VAR _Relationship = SELECTCOLUMNS(
 		INFO.RELATIONSHIPS(),
 		"Relationship ID",
 		FORMAT(
@@ -159,25 +151,21 @@ DEFINE
 			"Something else"
 		)
 	)
-
-	VAR _FrpmTable =
-	 SELECTCOLUMNS(
+	VAR _FromTable = SELECTCOLUMNS(
 		INFO.TABLES(),
 		"From Table ID",
 		[ID],
 		"From TableName",
 		[Name]
 	)
-	VAR _ToTable =
-	 SELECTCOLUMNS(
+	VAR _ToTable = SELECTCOLUMNS(
 		INFO.TABLES(),
 		"To Table ID",
 		[ID],
 		"To TableName",
 		[Name]
 	)
-	VAR _FromCol =
-	 SELECTCOLUMNS(
+	VAR _FromCol = SELECTCOLUMNS(
 		INFO.COLUMNS(),
 		"From Column ID",
 		FORMAT(
@@ -191,8 +179,7 @@ DEFINE
 			[ExplicitName]
 		)
 	)
-	VAR _ToCol =
-	 SELECTCOLUMNS(
+	VAR _ToCol = SELECTCOLUMNS(
 		INFO.COLUMNS(),
 		"To Column ID",
 		FORMAT(
@@ -206,7 +193,6 @@ DEFINE
 			[ExplicitName]
 		)
 	)
-
 
 EVALUATE
 	SELECTCOLUMNS(
@@ -224,7 +210,7 @@ EVALUATE
 								_ToColumnCardinality
 							)
 						),
-						_FrpmTable
+						_FromTable
 					),
 					_ToTable
 				),
@@ -253,4 +239,4 @@ EVALUATE
 		"Max To Cardinality",
 		[To Column Cardinality]
 	)
-	ORDER BY [From Table Name]
+	ORDER BY [From Table Name], [From Column Name]
