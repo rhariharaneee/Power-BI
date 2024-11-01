@@ -1,0 +1,204 @@
+EVALUATE
+	VAR _LocalDateTaable = COUNTROWS(FILTER(
+		INFO.TABLES(),
+		CONTAINSSTRING(
+			[Name],
+			"LocalDateTable"
+		)
+	))
+	VAR _inActiveRelationships = COUNTROWS(FILTER(
+		INFO.VIEW.RELATIONSHIPS(),
+		[IsActive] = FALSE()
+	))
+	VAR _biDirectionalRelationships = COUNTROWS(FILTER(
+		INFO.VIEW.RELATIONSHIPS(),
+		[CrossFilteringBehavior] = "BothDirections"
+	))
+	VAR _manytomanyRelationships = COUNTROWS(FILTER(
+		INFO.VIEW.RELATIONSHIPS(),
+		[FromCardinality] = "Many" && [ToCardinality] = "Many"
+	))
+	VAR _dedicatedDateTable = IF(
+		COUNTROWS(FILTER(
+			INFO.VIEW.TABLES(),
+			[DataCategory] = "Time"
+		)) = BLANK(),
+		"No",
+		"Yes"
+	)
+	VAR _redundantColumns = IF(
+		COUNTROWS(FILTER(
+			GROUPBY(
+				ADDCOLUMNS(
+					INFO.VIEW.COLUMNS(),
+					"COUNT", 1
+				),
+				[Name],
+				"Redundant",
+				SUMX(
+					CURRENTGROUP(),
+					[COUNT]
+				)
+			),
+			[Redundant] > 1
+		)) > 1,
+		"Yes",
+		"No"
+	)
+	VAR _calculatedColumn = COUNTROWS(FILTER(
+		INFO.COLUMNS(),
+		[Type] = 2
+	))
+	VAR _desc = IF(
+		COUNTROWS(FILTER(
+			INFO.VIEW.TABLES(),
+			[Description] = BLANK()
+		)) + COUNTROWS(FILTER(
+			INFO.VIEW.COLUMNS(),
+			[Description] = BLANK()
+		)) > 0,
+		"No",
+		"Yes"
+	)
+	VAR _dt_partition = SELECTCOLUMNS(
+		INFO.PARTITIONS(),
+		"PartitionID", [ID],
+		"TableID", [TableID],
+		"PartitionStorageID", [PartitionStorageID]
+	)
+	VAR _dt_table = SELECTCOLUMNS(
+		INFO.TABLES(),
+		"TableID", [ID],
+		"TableName", [Name]
+	)
+	VAR _dt_mergePartTable = NATURALINNERJOIN(
+		_dt_partition,
+		_dt_table
+	)
+	VAR _dt_Storage = INFO.SEGMENTMAPSTORAGES()
+	VAR _dt_final = NATURALINNERJOIN(
+		_dt_mergePartTable,
+		_dt_Storage
+	)
+	VAR _dt_finalCheck = IF(
+		COUNTROWS(FILTER(
+			GROUPBY(
+				_dt_final,
+				[TableName],
+				"Partitions",
+				COUNTX(
+					CURRENTGROUP(),
+					[PartitionID]
+				),
+				"RecordCount",
+				SUMX(
+					CURRENTGROUP(),
+					[RecordCount]
+				)
+			),
+			[Partitions] = 1 && [RecordCount] > 1000000
+		)) > 0,
+		"Yes",
+		"No"
+	)
+	RETURN
+		UNION(
+			ROW(
+				"Property", "Local Date Tables (Auto Time Intelligence)",
+				"Value", _LocalDateTaable + 0,
+				"Comment", "EVALUATE FILTER(INFO.TABLES(),CONTAINSSTRING([Name],""LocalDateTable""))",
+				"Status", IF(
+					_LocalDateTaable > 0,
+					"Fail",
+					"Pass"
+				)
+			),
+			ROW(
+				"Property", "In Active Relationships",
+				"Value", _inActiveRelationships + 0,
+				"Comment", "EVALUATE FILTER(INFO.VIEW.RELATIONSHIPS(),[IsActive]=FALSE())",
+				"Status", IF(
+					_inActiveRelationships > 0,
+					"Fail",
+					"Pass"
+				)
+			),
+			ROW(
+				"Property", "Bi-directional Relationships",
+				"Value", _biDirectionalRelationships + 0,
+				"Comment", "EVALUATE FILTER(INFO.VIEW.RELATIONSHIPS(), [CrossFilteringBehavior]=""BothDirections"")",
+				"Status", IF(
+					_biDirectionalRelationships > 0,
+					"Fail",
+					"Pass"
+				)
+			),
+			ROW(
+				"Property", "Many to Many Relationships",
+				"Value", _manytomanyRelationships + 0,
+				"Comment", "EVALUATE FILTER(INFO.VIEW.RELATIONSHIPS(),[FromCardinality]=""Many"" && [ToCardinality]=""Many"")",
+				"Status", IF(
+					_manytomanyRelationships > 0,
+					"Fail",
+					"Pass"
+				)
+			),
+			ROW(
+				"Property", "Dedicated Date Table",
+				"Value", _dedicatedDateTable,
+				"Comment", "EVALUATE FILTER(INFO.VIEW.TABLES(), [DataCategory]=""Time"")",
+				"Status", IF(
+					_dedicatedDateTable = "Yes",
+					"Pass",
+					"Fail"
+				)
+			),
+			ROW(
+				"Property", "Is there any Redundant Columns",
+				"Value", _redundantColumns,
+				"Comment", "EVALUATE FILTER(GROUPBY(ADDCOLUMNS(INFO.VIEW.COLUMNS(),""COUNT"", 1),[Name],""Redundant"",SUMX(CURRENTGROUP(),[COUNT])),[Redundant]>1)",
+				"Status", IF(
+					_redundantColumns = "No",
+					"Pass",
+					"Fail"
+				)
+			),
+			ROW(
+				"Property", "Calculated Columns",
+				"Value", _calculatedColumn,
+				"Comment", "EVALUATE FILTER(INFO.COLUMNS(),	[Type] = 2)",
+				"Status", IF(
+					_calculatedColumn > 0,
+					"Fail",
+					"Pass"
+				)
+			),
+			ROW(
+				"Property", "Are descriptions added?",
+				"Value", _desc,
+				"Comment", "EVALUATE FILTER(INFO.VIEW.TABLES(),[Description]=BLANK()))",
+				"Status", IF(
+					_desc = "No",
+					"Fail",
+					"Pass"
+				)
+			),
+			ROW(
+				"Property", "Is Partition Required?",
+				"Value", _dt_finalCheck,
+				"Comment", "EVALUATE VAR _dt_partition = SELECTCOLUMNS(INFO.PARTITIONS(),""PartitionID"",[ID],""TableID"",[TableID], ""PartitionStorageID"",[PartitionStorageID])
+				VAR _dt_table = SELECTCOLUMNS(INFO.TABLES(),""TableID"",[ID],""TableName"",[Name])
+				VAR _dt_mergePartTable = NATURALINNERJOIN(_dt_partition,_dt_table)
+				VAR _dt_Storage = INFO.SEGMENTMAPSTORAGES()
+				VAR _dt_final= NATURALINNERJOIN(_dt_mergePartTable,_dt_Storage)
+				RETURN
+				FILTER(GROUPBY(_dt_final,[TableName],""Partitions"",COUNTX(CURRENTGROUP(),[PartitionID]),""RecordCount"",SUMX(CURRENTGROUP(),[RecordCount])),[Partitions]=1 && [RecordCount]>1000000)
+",
+				"Status", IF(
+					_dt_finalCheck = "No",
+					"Pass",
+					"Fail"
+				)
+			)
+		)
+	ORDER BY [Status]
