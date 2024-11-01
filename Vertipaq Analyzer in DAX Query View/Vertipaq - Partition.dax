@@ -1,0 +1,45 @@
+// Author - Hariharan Rajendran
+// Name - VertiPaq Analyser Metrics - Parition view in DAX Query View
+// Version - 1.0
+// Contact - https://www.linkedin.com/in/imhariharanr/
+EVALUATE
+	VAR _partition = SELECTCOLUMNS(
+		INFO.PARTITIONS(),
+		"TableID", [TableID],
+		"PartitionStorageID", [PartitionStorageID],
+		"Name", [Name],
+		"Query", [QueryDefinition],
+		"State", [State],
+		"Mode", [Mode],
+		"RangeStart", [RangeStart],
+		"RangeEnd", [RangeEnd],
+		"RangeGranularity", [RangeGranularity]
+	)
+
+	VAR _table = SELECTCOLUMNS(
+		INFO.TABLES(),
+		"TableID", [ID],
+		"TableName", [Name]
+	)
+
+	RETURN
+		SELECTCOLUMNS(
+			NATURALINNERJOIN(
+				NATURALINNERJOIN(
+					_partition,
+					INFO.SEGMENTMAPSTORAGES()
+				),
+				_table
+			),
+			"TableName", [TableName],
+			"PartitionName", [Name],
+			"Query", [Query],
+			"State", [State],
+			"Mode", [Mode],
+			"RangeStart", [RangeStart],
+			"RangeEnd", [RangeEnd],
+			"RangeGranularity", [RangeGranularity],
+			"Rows", [RecordCount],
+			"SegmentCount", [SegmentCount],
+			"RecordsperSegment", [RecordsPerSegment]
+		)
