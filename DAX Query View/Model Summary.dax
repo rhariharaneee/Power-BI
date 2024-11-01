@@ -1,0 +1,102 @@
+EVALUATE
+	VAR _tableCount = COUNTROWS(INFO.TABLES())
+	VAR _columnCount = COUNTROWS(INFO.COLUMNS())
+	VAR _CalcColumnCount = COUNTROWS(FILTER(
+		INFO.COLUMNS(),
+		[Type] = 2
+	))
+	VAR _Measures = COUNTROWS(INFO.MEASURES())
+	VAR _Relationships = COUNTROWS(INFO.RELATIONSHIPS())
+	VAR _Composite = IF(
+		COUNTROWS(SUMMARIZE(
+			INFO.VIEW.TABLES(),
+			[StorageMode]
+		)) > 1,
+		"Yes",
+		"No"
+	)
+	VAR _daxTables = COUNTROWS(FILTER(
+		INFO.VIEW.TABLES(),
+		[Expression] <> BLANK()
+	))
+	VAR _Partitions = IF(
+		COUNTROWS(FILTER(
+			INFO.PARTITIONS(),
+			[RangeStart] <> BLANK()
+		)) > 0,
+		"Yes",
+		"No"
+	)
+VAR _perspectoves = COUNTROWS(INFO.PERSPECTIVES())
+VAR _CalcGroups = COUNTROWS(INFO.CALCULATIONGROUPS())
+VAR _roles = COUNTROWS(INFO.ROLES())
+VAR _version = MINX(FILTER(INFO.ANNOTATIONS(), [Name] in {"PBIDesktopVersion"}),[Value])
+	RETURN
+		UNION(
+			ROW(
+				"Property", "TableCount",
+				"Value", _tableCount+0,
+				"Comment", "EVALUATE INFO.TABLES()"
+			),
+			ROW(
+				"Property", "ColumnCount",
+				"Value", _columnCount+0,
+				"Comment", "EVALUATE INFO.COLUMNS()"
+			),
+			ROW(
+				"Property", "CalculatedColumnCount",
+				"Value", _CalcColumnCount+0,
+				"Comment", "EVALUATE FILTER(INFO.COLUMNS(),	[Type] = 2)"
+			),
+			ROW(
+				"Property", "DirectColumns",
+				"Value", (_columnCount - _CalcColumnCount)+0,
+				"Comment", "EVALUATE FILTER(INFO.COLUMNS(),	[Type] <>2)"
+			),
+			ROW(
+				"Property", "Measures",
+				"Value", _Measures+0,
+				"Comment", "EVALUATE INFO.MEASURES()"
+			),
+			ROW(
+				"Property", "Relationships",
+				"Value", _Relationships+0,
+				"Comment", "EVALUATE INFO.RELATIONSHIPS()"
+			),
+			ROW(
+				"Property", "IsCompositeModel",
+				"Value", _Composite,
+				"Comment", "EVALUATE INFO.VIEW.TABLES()"
+			),
+			ROW(
+				"Property", "DAXTables",
+				"Value", _daxTables+0,
+				"Comment", "EVALUATE FILTER(INFO.VIEW.TABLES(),[Expression] <> BLANK()
+	)"
+			),
+			ROW(
+				"Property", "IsPartitioned",
+				"Value", _Partitions,
+				"Comment", "EVALUATE FILTER(INFO.PARTITIONS()"
+			),ROW(
+				"Property", "Perspectives",
+				"Value", _perspectoves+0,
+				"Comment", "EVALUATE FILTER(INFO.PERSPECTIVES()"
+			),ROW(
+				"Property", "Calculation Groups",
+				"Value", _CalcGroups+0,
+				"Comment", "EVALUATE FILTER(INFO.CALCULATIONGROUPS()"
+			),ROW(
+				"Property", "Roles",
+				"Value", _roles+0,
+				"Comment", "EVALUATE FILTER(INFO.ROLES()"
+			),ROW(
+				"Property", "PBIDesktopVersion",
+				"Value", _version,
+				"Comment", "EVALUATE FILTER(INFO.ANNOTATIONS(), [Name] in {""PBIDesktopVersion""})"
+			)
+		)
+
+
+EVALUATE
+	INFO.PARTITIONS()
