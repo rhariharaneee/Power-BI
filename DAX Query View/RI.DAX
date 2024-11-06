@@ -1,0 +1,13 @@
+EVALUATE
+var RI_Violations =
+IF (
+    COUNTROWS(
+        FILTER('Product','Product'[ManufacturerID]='Product'[ManufacturerID])
+    ) = 0,
+    "Violation",
+    "No Violation"
+)
+RETURN
+ROW("TEST",RI_Violations)
+
+
