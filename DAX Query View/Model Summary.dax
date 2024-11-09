@@ -1,3 +1,9 @@
+// Author - Hariharan Rajendran
+// Name - Model Summary in DAX Query View
+// Version - 1.0
+// Contact - https://www.linkedin.com/in/imhariharanr/
+//This query will provide details about your model like propery, value and comment to execute the DAX query to see the complete list
+//Define the properties
 EVALUATE
 	VAR _tableCount = COUNTROWS(INFO.TABLES())
 	VAR _columnCount = COUNTROWS(INFO.COLUMNS())
@@ -31,25 +37,26 @@ VAR _perspectoves = COUNTROWS(INFO.PERSPECTIVES())
 VAR _CalcGroups = COUNTROWS(INFO.CALCULATIONGROUPS())
 VAR _roles = COUNTROWS(INFO.ROLES())
 VAR _version = MINX(FILTER(INFO.ANNOTATIONS(), [Name] in {"PBIDesktopVersion"}),[Value])
+	//Display the properties
 	RETURN
 		UNION(
 			ROW(
-				"Property", "TableCount",
+				"Property", "Tables",
 				"Value", _tableCount+0,
 				"Comment", "EVALUATE INFO.TABLES()"
 			),
 			ROW(
-				"Property", "ColumnCount",
+				"Property", "Columns",
 				"Value", _columnCount+0,
 				"Comment", "EVALUATE INFO.COLUMNS()"
 			),
 			ROW(
-				"Property", "CalculatedColumnCount",
+				"Property", "--CalculatedColumns",
 				"Value", _CalcColumnCount+0,
 				"Comment", "EVALUATE FILTER(INFO.COLUMNS(),	[Type] = 2)"
 			),
 			ROW(
-				"Property", "DirectColumns",
+				"Property", "--DirectColumns",
 				"Value", (_columnCount - _CalcColumnCount)+0,
 				"Comment", "EVALUATE FILTER(INFO.COLUMNS(),	[Type] <>2)"
 			),
