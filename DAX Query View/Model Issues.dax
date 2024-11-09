@@ -1,4 +1,11 @@
+// Author - Hariharan Rajendran
+// Name - Model Summary in DAX Query View
+// Version - 1.0
+// Contact - https://www.linkedin.com/in/imhariharanr/
+//This script will provide whether your model is following some of the stndards and best practices or not. Something like a BPA rules
+
 EVALUATE
+//Definition to check Local Date Table
 	VAR _LocalDateTaable = COUNTROWS(FILTER(
 		INFO.TABLES(),
 		CONTAINSSTRING(
@@ -6,18 +13,22 @@ EVALUATE
 			"LocalDateTable"
 		)
 	))
+	//Definition to check inactice relationship
 	VAR _inActiveRelationships = COUNTROWS(FILTER(
 		INFO.VIEW.RELATIONSHIPS(),
 		[IsActive] = FALSE()
 	))
+	//Definition to  check bi-directional relationship
 	VAR _biDirectionalRelationships = COUNTROWS(FILTER(
 		INFO.VIEW.RELATIONSHIPS(),
 		[CrossFilteringBehavior] = "BothDirections"
 	))
+	//Definition to check many to many relationships
 	VAR _manytomanyRelationships = COUNTROWS(FILTER(
 		INFO.VIEW.RELATIONSHIPS(),
 		[FromCardinality] = "Many" && [ToCardinality] = "Many"
 	))
+	//Definition to check dedicated date table
 	VAR _dedicatedDateTable = IF(
 		COUNTROWS(FILTER(
 			INFO.VIEW.TABLES(),
@@ -26,6 +37,7 @@ EVALUATE
 		"No",
 		"Yes"
 	)
+	//Definition to check redundant columns
 	VAR _redundantColumns = IF(
 		COUNTROWS(FILTER(
 			GROUPBY(
@@ -45,10 +57,12 @@ EVALUATE
 		"Yes",
 		"No"
 	)
+	//Definition to number of calculated columns
 	VAR _calculatedColumn = COUNTROWS(FILTER(
 		INFO.COLUMNS(),
 		[Type] = 2
 	))
+	//Definition to check whether descriptions are added on the tables and columns
 	VAR _desc = IF(
 		COUNTROWS(FILTER(
 			INFO.VIEW.TABLES(),
@@ -60,6 +74,7 @@ EVALUATE
 		"No",
 		"Yes"
 	)
+	//Definition to check partitions for large table
 	VAR _dt_partition = SELECTCOLUMNS(
 		INFO.PARTITIONS(),
 		"PartitionID", [ID],
@@ -101,6 +116,7 @@ EVALUATE
 		"Yes",
 		"No"
 	)
+	//Display the result
 	RETURN
 		UNION(
 			ROW(
