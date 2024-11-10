@@ -1,0 +1,33 @@
+// Author - Hariharan Rajendran
+// Name - Direct Lake Model Column Temperature Anlysis
+// Version - 1.0
+// Contact - https://www.linkedin.com/in/imhariharanr/
+
+//Check the column temperature
+EVALUATE
+	SELECTCOLUMNS(
+		INFO.STORAGETABLECOLUMNS(),
+		"TableName", [DIMENSION_NAME],
+		"ColumnName", [ATTRIBUTE_NAME],
+		"DicSize", [DICTIONARY_SIZE],
+		"Temp", [DICTIONARY_TEMPERATURE],
+		"LastAccessed", [DICTIONARY_LAST_ACCESSED]
+		
+	)
+	ORDER BY [Temp] DESC
+	
+	//Check the column temperature
+EVALUATE
+	SELECTCOLUMNS(
+		FILTER(INFO.STORAGETABLECOLUMNS(),[DICTIONARY_TEMPERATURE]=BLANK()),
+		"TableName", [DIMENSION_NAME],
+		"ColumnName", [ATTRIBUTE_NAME],
+		"DicSize", [DICTIONARY_SIZE],
+		"Temp", [DICTIONARY_TEMPERATURE],
+		"LastAccessed", [DICTIONARY_LAST_ACCESSED]
+		
+	)
+	ORDER BY [Temp] DESC
+	
+	
+	

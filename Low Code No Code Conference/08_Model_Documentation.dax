@@ -1,0 +1,17 @@
+// Author - Hariharan Rajendran
+// Name - Model Documentation
+// Version - 1.0
+// Contact - https://www.linkedin.com/in/imhariharanr/
+
+//Tables
+EVALUATE 
+INFO.VIEW.TABLES()
+
+//Columns
+EVALUATE INFO.VIEW.COLUMNS()
+
+//Measures
+EVALUATE INFO.VIEW.MEASURES()
+
+//Relationships
+EVALUATE INFO.VIEW.RELATIONSHIPS()
