@@ -1,0 +1,15 @@
+// Author - Hariharan Rajendran
+// Name - Used columns in DAX Query View
+// Version - 1.0
+// Contact - https://www.linkedin.com/in/imhariharanr/
+EVALUATE
+	SELECTCOLUMNS(
+		FILTER(
+			INFO.CALCDEPENDENCY(),
+			[REFERENCED_OBJECT_TYPE] = "COLUMN"
+		),
+		"Type", [OBJECT_TYPE],	
+		"Name of Type", [OBJECT],
+		"SourceTable", [REFERENCED_TABLE],
+		"SourceColumn", [REFERENCED_OBJECT]
+	)
