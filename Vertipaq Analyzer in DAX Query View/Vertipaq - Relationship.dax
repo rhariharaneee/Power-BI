@@ -201,14 +201,14 @@ EVALUATE
 				NATURALLEFTOUTERJOIN(
 					NATURALINNERJOIN(
 						NATURALLEFTOUTERJOIN(
-							_RelationshipSize,
+							
 							NATURALLEFTOUTERJOIN(
 								NATURALLEFTOUTERJOIN(
 									_Relationship,
 									_FromColumnCardinality
 								),
 								_ToColumnCardinality
-							)
+							),_RelationshipSize
 						),
 						_FromTable
 					),
