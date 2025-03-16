@@ -104,6 +104,3 @@ VAR _version = MINX(FILTER(INFO.ANNOTATIONS(), [Name] in {"PBIDesktopVersion"}),
 			)
 		)
 
-
-EVALUATE
-	INFO.PARTITIONS()
