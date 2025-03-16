@@ -1,0 +1,46 @@
+// Author - Hariharan Rajendran
+// Name - Measure Dependency - Columns, Tables and Measures
+// Version - 1.0
+// Contact - https://www.linkedin.com/in/imhariharanr/
+EVALUATE
+	UNION(NATURALLEFTOUTERJOIN(
+		SELECTCOLUMNS(
+			SUMMARIZE(
+				FILTER(
+					INFO.CALCDEPENDENCY(),
+					[REFERENCED_OBJECT_TYPE] = "Measure"
+				),
+				[OBJECT],
+				[EXPRESSION],
+				[REFERENCED_OBJECT]
+			),
+			"MeasureName", [OBJECT],
+			"Expression", [EXPRESSION],
+			"SourceMeasure", [REFERENCED_OBJECT]
+		),
+		SELECTCOLUMNS(
+			SUMMARIZE(
+				FILTER(
+					INFO.CALCDEPENDENCY(),
+					[OBJECT_TYPE] = "Measure"
+				),
+				[OBJECT],
+				[EXPRESSION],
+				[REFERENCED_OBJECT_TYPE],
+				[REFERENCED_TABLE],
+				[REFERENCED_OBJECT]
+			),
+			"SourceMeasure", [OBJECT],
+			"SourceExpression", [EXPRESSION],
+			"Type", [REFERENCED_OBJECT_TYPE],
+			"ReferenceTable", [REFERENCED_TABLE],
+			"ReferenceObject", [REFERENCED_OBJECT]
+		)
+	),
+	SELECTCOLUMNS(FILTER(
+		INFO.CALCDEPENDENCY(),
+		[OBJECT_TYPE] = "Measure" && [REFERENCED_OBJECT_TYPE] <> "Measure"
+	), "MeasureName", [OBJECT], "Expression", [EXPRESSION], "SourceMeasure","","SourceExpression","","Type", [REFERENCED_OBJECT_TYPE],
+			"ReferenceTable", [REFERENCED_TABLE],
+			"ReferenceObject", [REFERENCED_OBJECT])
+	)
