@@ -1,0 +1,45 @@
+Follow the instructions and execute the step by steps automatically
+
+Step 1: check Dax.Vpax.cli is installed or not. If not installed then install using following command dotnet tool install --global Dax.Vpax.CLI --version 1.2.11
+
+Step 2: Create a new folder called "Model_Review" and make that as a current directory.
+
+Step 3: Create a new folder called VPAX, CD to VPAX folder and export the vpax from currently opened Power BI desktop file. Ask me to provide $localhost and $db. replace the values in below command and run 
+vpax export "$vapxlocation" "Provider=MSOLAP;Data Source=$localhost;Initial Catalog=$db"
+$vapxlocation = .\model.vpax - current directory
+
+step 4: Unzip the model.vpax file inside VPAX folder
+
+Step 5: Export bim file 
+Create a new folder called "TE" inside Model_Review folder and perform below activities.
+-- cd to TE folder
+--Download the Tabular editor portable version from here "https://github.com/TabularEditor/TabularEditor/releases/download/2.26.0/TabularEditor.Portable.zip" on the same folder. 
+--Unzip the file
+--Exuecte the below line
+
+\TabularEditor.exe "Provider=MSOLAP;Data Source=$localhost" $db -B "$bimlocation.bim"
+$bimlocation = Model_Review\TE\model
+
+Step 6: Download BPA rules from https://github.com/TabularEditor/BestPracticeRules/blob/master/BPARules-PowerBI.json and store it as BPARules.json
+
+.\TabularEditor.exe \model.bim  -A \BPARules.json | out-file  .\bparesults.txt 
+
+
+Step 7: Read  DaxVpaView.json and get the below views.
+ Use "ReferenceOutcome.html" as a reference html
+
+Parse the file and group the information like Tables, columns (include all columns), Partitions (all information), all relationships and Summary and map all the details in a table format and write the same in html file, replace section $VpaqTables
+$VpaqColumns
+$VpaqRelationships
+$VpaqPartitions
+$VpaqModelSize in html file with parsed tabluar information. 
+Use proper number formatting and thousand separator. Also highlight high cardinality columns in light red row. High light RI Violations. Build a HTML page with fancy look and feel with all the above information 
+
+
+Step 8: Parse Model_Review\bparesults.txt  and show the results in easy reable format in Table view. Write this on the same html file. replace $BPARules with table result
+
+Step 9: Take the requirements.md file and run all the rules from that file against all the DAX measures in the model. Get the list of measures from DaxVpaView file.  Write this on the same html file. replace $DAXValidation with table result
+
+Step 10: Read Model.bim file and suggest all recommendations from standards and best practices perspective. Add results in htmo overview page. 
+--replace $modelscore Give a score out of 5.. give score for each section - BPA Analyser Results, DAX Measure Validation and over all
+ and $modelrecommendation for overall recommendations .

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Power BI Validation</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .section {
+      display: none;
+      padding: 20px;
+    }
+
+    .active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a onclick="showPage('home')">Summary</a>
+    <a onclick="showPage('Vpaq')">Vertipaq Analyser</a>
+    <a onclick="showPage('Opti')">Optimization Recommendations</a>
+
+  </nav>
+
+  <div id="home" class="section active">
+    <h1>Summary</h1>
+    <p>This section covers the overall summary of the model.</p>
+     <h3>Overall Model Score</h3>
+      $modelscore
+      
+     <h3>Recommendation Summary</h3>
+     $modelrecommendation
+    
+  </div>
+
+  <div id="Vpaq" class="section">
+    <h1>Summary</h1>
+    <p>This section tells you about Vertipaq detail.</p>
+    $VpaqTables
+    <br>
+    $VpaqColumns
+     <br>
+    $VpaqRelationships
+     <br>
+    $VpaqPartitions
+     <br>
+    $VpaqModelSize
+  </div>
+
+  <div id="Opti" class="section">
+    <h1>Recommendation</h1>
+    <p>This section shows possible recommendation.</p>
+      $DAXValidation
+    <br>
+     $BPARules
+     
+  </div>
+  </div>
+
+  <script>
+    function showPage(pageId) {
+      // Hide all sections
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => section.classList.remove('active'));
+
+      // Show the selected section
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
