@@ -1,0 +1,61 @@
+//Author - Hariharan Rajendran
+//Contact - https://www.linkedin.com/in/imhariharanr/
+//version - 1.2
+
+//The below expression is to help identify the roles defined in Power BI Semantic model and understand all the filter expression applied on the tables specifically for OLS
+EVALUATE
+	VAR _TableExp = SELECTCOLUMNS(
+		INFO.TABLEPERMISSIONS(),
+		"TablePermissionID", [ID],
+		"RoleID", [RoleID],
+		"TableID", [TableID],
+		"RoleExp", [FilterExpression]
+	)
+	VAR _Role = SELECTCOLUMNS(
+		INFO.ROLES(),
+		"RoleID", [ID],
+		"RoleName", [Name]
+	)
+	VAR _Table = SELECTCOLUMNS(
+		INFO.TABLES(),
+		"TableID", [ID],
+		"TableName", [Name]
+	)
+	VAR _ColumnPer = SELECTCOLUMNS(
+		INFO.COLUMNPERMISSIONS(),
+		[TablePermissionID],
+		[ColumnID],
+		"TypeofPermission", SWITCH(
+			[MetadataPermission],
+			0, "Default - No restriction",
+			1, "None - Object is hidden as part of OLS",
+			"Read - Object is available for read"
+		)
+	)
+	VAR _columns = SELECTCOLUMNS(
+		INFO.COLUMNS(),
+		"ColumnID", [ID],
+		"ColumnName", [ExplicitName]
+	)
+
+	RETURN
+		SELECTCOLUMNS(
+			NATURALLEFTOUTERJOIN(
+				NATURALLEFTOUTERJOIN(
+					NATURALLEFTOUTERJOIN(
+						NATURALLEFTOUTERJOIN(
+							_ColumnPer,
+							_TableExp
+						),
+						_columns
+					),
+					_Table
+				),
+				_Role
+			),
+			[RoleName],
+			[TableName],
+			[ColumnName],
+			[TablePermissionID],
+			[TypeofPermission]
+		)
