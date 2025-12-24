@@ -1,0 +1,34 @@
+//Author - Hariharan Rajendran
+//Contact - https://www.linkedin.com/in/imhariharanr/
+//version - 1.2
+
+//The below expression is to help identify the roles assigned to different users and groups
+EVALUATE
+	VAR _RoleMembers = SELECTCOLUMNS(
+		INFO.ROLEMEMBERSHIPS(),
+		[RoleID],
+		[MemberName],
+		[IdentityProvider],
+		"MemberType", SWITCH(
+			[MemberType],
+			2, "User",
+			3, "AD group",
+			"Auto"
+		)
+	)
+	VAR _Role = SELECTCOLUMNS(
+		INFO.ROLES(),
+		"RoleID", [ID],
+		"RoleName", [Name]
+	)
+	RETURN
+		SELECTCOLUMNS(
+			NATURALLEFTOUTERJOIN(
+				_RoleMembers,
+				_Role
+			),
+			[RoleName],
+			[MemberType],
+			[IdentityProvider],
+			[MemberName]
+		)
