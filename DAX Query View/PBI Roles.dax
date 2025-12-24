@@ -1,0 +1,33 @@
+//Author - Hariharan Rajendran
+//Contact - https://www.linkedin.com/in/imhariharanr/
+//version - 1.2
+
+//The below expression is to help identify the roles defined in Power BI Semantic model and understand all the filter expression applied on the tables
+EVALUATE
+//select only required columns from Tables. Extract only Table Name
+	VAR _Table = SELECTCOLUMNS(
+		INFO.TABLES(),
+		"TableID", [ID],
+		"TableName", [Name]
+	)
+//Get the required cokumns from Role Tabel permission
+	VAR _TableExp = SELECTCOLUMNS(
+		INFO.TABLEPERMISSIONS(),
+		"RoleID", [RoleID],
+		"TableID", [TableID],
+		"RoleExp", [FilterExpression]
+	)
+//Get the required columns from roles
+	VAR _Role = SELECTCOLUMNS(
+		INFO.ROLES(),
+		"RoleID", [ID],
+		"RoleName", [Name]
+	)
+	RETURN
+		NATURALLEFTOUTERJOIN(
+			NATURALLEFTOUTERJOIN(
+				_TableExp,
+				_Table
+			),
+			_Role
+		)
